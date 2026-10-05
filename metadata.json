@@ -1,0 +1,6 @@
+{
+  "name": "Efraim Fitness - Academia Boutique",
+  "description": "Academia Efraim Fitness em Nanuque - MG. Musculação, treinamento funcional, avaliação física com bioimpedância e acompanhamento exclusivo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
