@@ -1,11 +1,5 @@
 import React from 'react';
-import { ChevronDown } from 'lucide-react';
 import { GYM_INFO, IMAGES, createWhatsAppLink } from '../data/gymData';
-import {
-  ExclusiveWhatsAppIcon,
-  ExclusiveInstagramIcon,
-  ExclusiveArrowRight,
-} from './ExclusiveIcons';
 
 interface HeroProps {
   onOpenTrialModal: () => void;
@@ -23,9 +17,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrialModal }) => {
   return (
     <section
       id="inicio"
-      className="relative w-full min-h-[calc(100vh-4.5rem)] lg:h-[calc(100vh-4.5rem)] min-h-[580px] flex items-center justify-center lg:justify-start overflow-hidden overflow-x-hidden bg-black"
+      className="relative w-full min-h-[calc(100vh-4.5rem)] lg:h-[calc(100vh-4.5rem)] min-h-[640px] flex items-center overflow-hidden bg-black"
     >
-      {/* 1. IMAGEM DE FUNDO: Ocupa toda a área com background-size: cover e background-position: center */}
+      {/* 1. BACKGROUND: Imagem da academia/equipamentos com cover e center */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -33,110 +27,128 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrialModal }) => {
         }}
       />
 
-      {/* 2. OVERLAY ESCURO SUTIL: Contraste perfeito sem ocultar os aparelhos e luzes da academia */}
+      {/* 2. OVERLAY: Escurecimento cinematográfico com contraste no lado esquerdo/central e transparência à direita */}
       <div className="absolute inset-0 z-[1] bg-black/40 pointer-events-none" />
-      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none lg:bg-gradient-to-r lg:from-black/90 lg:via-black/55 lg:to-transparent" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black via-black/80 via-45% to-transparent pointer-events-none" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
 
-      {/* 3. ELEMENTOS DECORATIVOS: Linhas diagonais discretas no lado direito (apenas desktop grande) */}
-      <div className="absolute right-0 top-1/4 w-72 h-72 pointer-events-none opacity-40 hidden xl:block z-[2]">
-        <svg className="w-full h-full" viewBox="0 0 200 200" fill="none">
-          <line x1="200" y1="40" x2="110" y2="190" stroke="#65f603" strokeWidth="2.5" />
-          <line x1="200" y1="75" x2="135" y2="190" stroke="#65f603" strokeWidth="1.5" />
-        </svg>
-      </div>
-
-      {/* 4. CONTAINER PRINCIPAL: Totalmente centralizado em telas mobile com padding seguro anti-overflow */}
-      <div className="relative z-10 max-w-[1536px] mx-auto px-4 xs:px-5 sm:px-8 lg:px-[5%] w-full h-full flex items-center justify-center lg:justify-start py-8 sm:py-12 lg:py-6">
+      {/* 3. CONTAINER PRINCIPAL: Conteúdo perfeitamente equilibrado e centralizado verticalmente no Viewport (100vh) */}
+      <div className="relative z-10 w-full max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 h-full flex flex-col justify-center items-center lg:items-start pt-8 pb-16 sm:pt-10 sm:pb-20 lg:py-0">
         
-        {/* Coluna de Conteúdo: 100% centralizada no mobile e alinhada à esquerda no desktop */}
-        <div className="w-full lg:w-[50%] max-w-[580px] text-center lg:text-left flex flex-col items-center lg:items-start justify-center space-y-4 sm:space-y-5 mx-auto lg:mx-0 lg:-translate-y-8">
+        {/* Bloco de Conteúdo: hero-content posicionado na área esquerda-centro e ajustado um pouco mais acima */}
+        <div className="hero-content w-full lg:max-w-[660px] xl:max-w-[720px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-4 sm:space-y-5 lg:space-y-6 my-auto -translate-y-3 sm:-translate-y-4 lg:-translate-y-6 xl:-translate-y-8 mx-auto lg:mx-0 lg:ml-2 xl:ml-6">
           
-          {/* LOGO NO TOPO: Perfeitamente centralizada e proporcional para telas menores */}
-          <div className="w-full flex justify-center lg:justify-start items-center">
+          {/* 1. LOGO EFRAIM FITNESS: Proporcional e alinhado na área esquerda-centro */}
+          <div className="w-full flex items-center justify-center lg:justify-start">
             <img
               src={IMAGES.brandLogo}
-              alt="Academias Efraim Fitness"
-              className="w-[190px] xs:w-[220px] sm:w-[290px] lg:w-[380px] xl:w-[410px] max-w-full h-auto object-contain select-none pointer-events-none mx-auto lg:mx-0"
+              alt="Efraim Fitness"
+              className="w-[150px] sm:w-[190px] lg:w-[220px] h-auto object-contain select-none pointer-events-none mx-auto lg:mx-0"
               style={{
-                filter:
-                  'drop-shadow(0 0 16px rgba(101, 246, 3, 0.45)) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.9))',
+                filter: 'drop-shadow(0 0 12px rgba(92, 255, 0, 0.45))',
               }}
               loading="eager"
             />
           </div>
 
-          {/* TÍTULO: Dimensionamento responsivo anti-overflow com pesos distintos e contraste branco/verde */}
-          <h1 className="w-full uppercase tracking-tight leading-[0.98] sm:leading-[0.94] text-center lg:text-left drop-shadow-2xl">
-            {/* Linha 1: 'SEU OBJETIVO.' com peso font-extrabold (800) em branco sólido */}
-            <span className="block font-bold sm:font-extrabold text-white text-[28px] xs:text-[32px] sm:text-[44px] md:text-5xl lg:text-[62px] xl:text-[68px] tracking-tight">
+          {/* 2. TÍTULO PRINCIPAL: 2 Linhas Inteiras, Centralizado no Mobile e Alinhado na Área Esquerda-Centro no Desktop */}
+          <h1 className="w-full uppercase tracking-tight leading-[1.02] sm:leading-[0.98] text-center lg:text-left flex flex-col items-center lg:items-start">
+            {/* Linha 1: 'SEU OBJETIVO.' (BRANCO) */}
+            <span className="block font-black text-white text-[clamp(1.4rem,6.2vw,2.5rem)] sm:text-[clamp(2.4rem,5.2vw,3.6rem)] lg:text-[56px] xl:text-[64px] tracking-tight whitespace-nowrap text-center lg:text-left mx-auto lg:mx-0">
               SEU OBJETIVO.
             </span>
-            {/* Linha 2: 'NOSSA MISSÃO.' com peso font-black (900) ultra-pesado no verde oficial (#65f603) */}
-            <span className="block font-black text-[#65f603] text-[28px] xs:text-[32px] sm:text-[44px] md:text-5xl lg:text-[62px] xl:text-[68px] tracking-tight mt-0.5 sm:mt-1">
+            {/* Linha 2: 'NOSSA MISSÃO.' (VERDE NEON/LIMA #5CFF00) */}
+            <span className="block font-black text-[#5CFF00] text-[clamp(1.4rem,6.2vw,2.5rem)] sm:text-[clamp(2.4rem,5.2vw,3.6rem)] lg:text-[56px] xl:text-[64px] tracking-tight mt-1 whitespace-nowrap text-center lg:text-left mx-auto lg:mx-0">
               NOSSA MISSÃO.
             </span>
           </h1>
 
-          {/* DESCRIÇÃO: Centralizada no mobile com largura balanceada */}
-          <p className="text-gray-100 text-xs sm:text-base lg:text-[18px] leading-relaxed font-normal max-w-[460px] text-center lg:text-left mx-auto lg:mx-0 drop-shadow-md px-2 sm:px-0">
+          {/* 3. DESCRIÇÃO: Largura balanceada de ~460px */}
+          <p className="text-[#B8B8B8] text-sm sm:text-[15px] lg:text-base leading-relaxed font-normal max-w-[460px] text-center lg:text-left mx-auto lg:mx-0 px-2 sm:px-0">
             Musculação, treinamento funcional e acompanhamento personalizado para você evoluir de verdade.
           </p>
 
-          {/* BOTÕES DE AÇÃO: Padrão Premium de Alto Nível (proporções elegantes e ícones exclusivos) */}
-          <div className="pt-1 sm:pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-3.5 w-full max-w-[320px] sm:max-w-none mx-auto lg:mx-0">
-            {/* CTA 1: QUERO COMEÇAR (Design refinado com verde oficial #65f603 e ícone exclusivo) */}
+          {/* 4. BOTÕES CTA: Lado a Lado no Desktop e Adaptativos no Mobile */}
+          <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 sm:gap-4 w-full max-w-[340px] sm:max-w-none mx-auto lg:mx-0">
+            {/* BOTÃO PRINCIPAL: QUERO COMEÇAR → */}
             <a
               href={createWhatsAppLink('Olá! Vim pelo site da Efraim Fitness e quero começar a treinar!')}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 bg-[#65f603] hover:bg-[#59e002] text-black font-extrabold text-[11px] sm:text-xs uppercase tracking-[0.09em] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-200 shadow-md hover:shadow-[0_0_18px_rgba(101,246,3,0.35)] active:scale-[0.98] w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#5CFF00] hover:bg-[#52e600] text-black font-extrabold text-xs sm:text-[13px] uppercase tracking-wider px-6 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-200 shadow-lg hover:shadow-[0_0_20px_rgba(92,255,0,0.5)] active:scale-[0.98] w-full sm:w-auto shrink-0"
             >
-              <ExclusiveWhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" />
+              {/* Badge Circular Esportivo */}
+              <span className="w-5 h-5 rounded-full bg-black flex items-center justify-center shrink-0">
+                <svg className="w-3 h-3 text-[#5CFF00] fill-current" viewBox="0 0 24 24">
+                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" />
+                </svg>
+              </span>
               <span>QUERO COMEÇAR</span>
-              <ExclusiveArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+              {/* Seta à Direita */}
+              <svg
+                className="w-4 h-4 text-black stroke-current shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 12h14.5" />
+                <path d="m13 6.5 5.5 5.5-5.5 5.5" />
+              </svg>
             </a>
 
-            {/* CTA 2: NOSSO INSTAGRAM (Design translúcido sofisticado com borda fina de alta precisão) */}
+            {/* BOTÃO SECUNDÁRIO: [ÍCONE INSTAGRAM] NOSSO INSTAGRAM */}
             <a
               href={GYM_INFO.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 border border-[#65f603]/80 hover:border-[#65f603] text-white hover:bg-[#65f603] hover:text-black font-extrabold text-[11px] sm:text-xs uppercase tracking-[0.09em] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-200 bg-black/40 backdrop-blur-md active:scale-[0.98] w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 border-2 border-[#5CFF00] text-white hover:bg-[#5CFF00] hover:text-black font-extrabold text-xs sm:text-[13px] uppercase tracking-wider px-6 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all duration-200 bg-black/40 backdrop-blur-sm active:scale-[0.98] group w-full sm:w-auto shrink-0"
             >
-              <ExclusiveInstagramIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#65f603] group-hover:text-black transition-colors" />
+              {/* Ícone Instagram Verde */}
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4 text-[#5CFF00] group-hover:text-black transition-colors shrink-0"
+              >
+                <rect width="18" height="18" x="3" y="3" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" />
+              </svg>
               <span>NOSSO INSTAGRAM</span>
-            </a>
-          </div>
-
-          {/* INSTAGRAM HANDLE: @efraimfitness_ */}
-          <div className="pt-0.5 flex items-center justify-center lg:justify-start gap-1.5 text-xs text-gray-200 w-full mx-auto">
-            <ExclusiveInstagramIcon className="w-3.5 h-3.5 text-[#65f603]" />
-            <a
-              href={GYM_INFO.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-gray-300 hover:text-[#65f603] transition-colors"
-            >
-              {GYM_INFO.instagramHandle}
             </a>
           </div>
 
         </div>
       </div>
 
-      {/* 5. ELEMENTO 'ROLE PARA DESCOBRIR' CENTRALIZADO NA BASE */}
-      <div className="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center pointer-events-auto">
+      {/* 5. SCROLL INDICATOR: Na parte inferior central da hero */}
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center pointer-events-auto">
         <a
           href="#sobre"
           onClick={handleScrollToSobre}
-          className="group flex flex-col items-center text-gray-300 hover:text-[#65f603] transition-colors duration-200"
+          className="group flex flex-col items-center text-gray-300 hover:text-[#5CFF00] transition-colors duration-200"
           aria-label="Rolar para descobrir a próxima seção"
         >
-          <div className="w-[1.5px] h-5 sm:h-6 bg-[#65f603] mb-1.5" />
-          <span className="text-[9px] sm:text-[11px] font-bold tracking-[0.22em] uppercase mb-1 drop-shadow">
+          <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase text-[#B8B8B8] group-hover:text-white transition-colors mb-1 drop-shadow">
             ROLE PARA DESCOBRIR
           </span>
-          <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-bounce text-white group-hover:text-[#65f603] transition-colors" />
+          {/* Seta Verde Neon apontando para baixo */}
+          <svg
+            className="w-4 h-4 text-[#5CFF00] animate-bounce"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
         </a>
       </div>
     </section>

@@ -23,31 +23,39 @@ export const Products: React.FC = () => {
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#65f603]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-            {/* Image banner based on products poster */}
+            {/* Image banner based on products poster com Moldura de Exibição Completa (Sem Cortes) */}
             <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="relative rounded-2xl overflow-hidden border border-[#65f603]/40 shadow-2xl bg-black group max-w-md mx-auto lg:max-w-none">
-                <img
-                  alt="Produtos e Acessórios Efraim Fitness"
-                  className="w-full h-[320px] sm:h-[420px] object-cover object-top group-hover:scale-105 transition duration-700 ease-out"
-                  src={IMAGES.productsPoster}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 sm:left-4 sm:right-4 bg-brand-pitch/85 backdrop-blur-md border border-[#65f603]/30 rounded-xl p-3 text-center">
-                  <span className="text-xs font-black text-[#65f603] uppercase tracking-wider block">
-                    Disponível na Recepção
-                  </span>
-                  <span className="text-[11px] text-gray-300">
-                    Acessórios a pronta entrega durante todo o horário de treino
-                  </span>
+              <div className="relative group max-w-[320px] sm:max-w-[360px] lg:max-w-[380px] mx-auto">
+                {/* Ambient Backlight Halo */}
+                <div className="absolute -inset-2 bg-gradient-to-b from-[#5CFF00]/25 via-[#5CFF00]/10 to-transparent rounded-[28px] blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-500 -z-10" />
+
+                {/* Moldura Premium de Exibição */}
+                <div className="relative p-2 sm:p-2.5 rounded-[26px] bg-gradient-to-b from-white/15 via-[#5CFF00]/20 to-white/5 border border-white/10 shadow-2xl backdrop-blur-md">
+                  {/* Container interno preto que preserva 100% da imagem sem nenhum corte */}
+                  <div className="rounded-[18px] overflow-hidden bg-black relative flex items-center justify-center">
+                    <img
+                      alt="Cartaz Oficial de Conveniência e Acessórios Efraim Fitness"
+                      className="w-full h-auto object-contain block select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out"
+                      src={IMAGES.productsPoster}
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                {/* Selo Informativo Posicionado Abaixo da Moldura (Sem Cobrir o Conteúdo do Cartaz) */}
+                <div className="mt-3.5 flex items-center justify-center">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/85 border border-[#5CFF00]/40 text-[#5CFF00] text-[11px] font-extrabold uppercase tracking-wider backdrop-blur-md shadow-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#5CFF00] animate-pulse" />
+                    <span>Disponível na Recepção • Pronta Entrega</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Description and product listing - centralizado no mobile */}
             <div className="lg:col-span-7 order-1 lg:order-2 space-y-5 sm:space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#65f603]/10 border border-[#65f603]/30 text-[#65f603] text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
-                Boutique &amp; Praticidade
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5CFF00]/10 border border-[#5CFF00]/30 text-[#5CFF00] text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
+                Conveniência &amp; Praticidade
               </div>
 
               <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight leading-tight text-center lg:text-left">

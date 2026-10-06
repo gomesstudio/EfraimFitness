@@ -90,29 +90,25 @@ export const Modalities: React.FC<ModalitiesProps> = ({ onSelectModality }) => {
           {modalities.map((item) => (
             <div
               key={item.name}
-              className="group relative rounded-2xl overflow-hidden border border-brand-border bg-brand-surface hover:border-[#65f603]/60 transition duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-black/50"
+              className="group relative rounded-2xl overflow-hidden border border-brand-border bg-brand-surface hover:border-[#5CFF00]/60 transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-black/60"
             >
-              {/* Card Image Cover */}
-              <div className="h-52 sm:h-56 lg:h-60 overflow-hidden relative bg-black">
+              {/* Retângulo da Imagem em Proporção Exata 4:3 (Sem Cortes) */}
+              <div className="w-full aspect-[4/3] overflow-hidden relative bg-[#0a0c0e]">
                 <img
-                  alt={`${item.name} Efraim Fitness`}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500 ease-out"
+                  alt={`Modalidade ${item.name} Efraim Fitness`}
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                   src={item.image}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/30 to-transparent pointer-events-none" />
-                <div className="absolute top-3 left-3 bg-black/80 border border-[#65f603]/50 text-[10px] font-black uppercase px-2.5 py-1 rounded-full text-[#65f603] backdrop-blur-sm">
-                  {item.badge}
-                </div>
               </div>
 
-              {/* Card Body */}
+              {/* Corpo do Card: Explicação da Modalidade e Ação */}
               <div className="p-5 flex-1 flex flex-col justify-between text-center sm:text-left">
                 <div>
-                  <h3 className="text-lg font-bold uppercase text-white tracking-wide group-hover:text-[#65f603] transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold uppercase text-white tracking-wide group-hover:text-[#5CFF00] transition-colors">
                     {item.name}
                   </h3>
-                  <p className="text-gray-400 text-xs mt-2 leading-relaxed">
+                  <p className="text-gray-300 text-xs mt-2 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -121,7 +117,7 @@ export const Modalities: React.FC<ModalitiesProps> = ({ onSelectModality }) => {
                   <ul className="text-[11px] text-gray-300 space-y-1.5 mt-4 pt-3 border-t border-brand-border text-left">
                     {item.bullets.map((b, i) => (
                       <li key={i} className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#65f603] shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#5CFF00] shrink-0" />
                         <span>{b}</span>
                       </li>
                     ))}
@@ -132,7 +128,7 @@ export const Modalities: React.FC<ModalitiesProps> = ({ onSelectModality }) => {
                       href={createWhatsAppLink(item.whatsappMsg)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-full border border-[#65f603]/70 hover:border-[#65f603] bg-black/40 hover:bg-[#65f603] text-[#65f603] hover:text-black font-extrabold text-[11px] uppercase tracking-[0.08em] transition-all duration-200 shadow-sm active:scale-[0.98]"
+                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-full border border-[#5CFF00]/70 hover:border-[#5CFF00] bg-black/40 hover:bg-[#5CFF00] text-[#5CFF00] hover:text-black font-extrabold text-[11px] uppercase tracking-[0.08em] transition-all duration-200 shadow-sm active:scale-[0.98]"
                     >
                       <ExclusiveWhatsAppIcon className="w-3.5 h-3.5 fill-current" />
                       <span>Consultar no WhatsApp</span>

@@ -5,26 +5,39 @@ export const FloatingWhatsApp: React.FC = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="fixed bottom-5 sm:bottom-6 right-5 sm:right-6 z-50 flex items-center gap-3">
-      {/* Tooltip on hover/mobile teaser */}
-      {hovered && (
-        <div className="hidden sm:flex bg-black/90 border border-[#65f603]/50 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-2xl backdrop-blur-md items-center gap-2 animate-in fade-in slide-in-from-right-3">
-          <span className="w-2 h-2 rounded-full bg-[#65f603] animate-pulse" />
-          <span>Fale no WhatsApp agora</span>
-        </div>
-      )}
+    <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2.5 select-none">
+      {/* Tooltip discreto no hover (desktop) */}
+      <div
+        className={`hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/85 backdrop-blur-md border border-white/10 text-gray-200 text-[11px] font-medium shadow-lg transition-all duration-200 pointer-events-none ${
+          hovered
+            ? 'opacity-100 translate-x-0'
+            : 'opacity-0 translate-x-2 pointer-events-none'
+        }`}
+      >
+        <span className="w-1.5 h-1.5 rounded-full bg-[#5CFF00]" />
+        <span>Fale Conosco</span>
+      </div>
 
+      {/* Botão Flutuante Discreto, Compacto e Refinado */}
       <a
         aria-label="Fale conosco pelo WhatsApp"
-        className="bg-[#65f603] hover:bg-[#59e002] text-black p-3.5 sm:p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 flex items-center justify-center glow-lime focus:outline-none focus:ring-4 focus:ring-[#65f603]/50"
-        href={createWhatsAppLink('Olá! Gostaria de tirar dúvidas sobre a Academia Efraim Fitness.')}
+        className="relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#5CFF00] hover:bg-[#52e600] text-black shadow-lg transition-all duration-200 ease-out hover:scale-105 active:scale-95 focus:outline-none"
+        style={{
+          boxShadow: '0 4px 14px rgba(0, 0, 0, 0.35), 0 0 12px rgba(92, 255, 0, 0.2)',
+        }}
+        href={createWhatsAppLink(GYM_INFO.defaultWhatsAppMessage)}
         target="_blank"
         rel="noopener noreferrer"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <svg className="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-1.927-.433-1.46-.603-2.404-2.079-2.477-2.176-.072-.098-.592-.787-.592-1.503 0-.717.377-1.07.51-1.215.134-.145.291-.182.387-.182s.193.003.277.008c.089.005.208-.033.324.246.121.291.413 1.007.449 1.08.036.073.06.158.012.255-.049.097-.073.158-.145.242-.073.085-.153.189-.219.255-.073.073-.148.152-.063.297.085.146.378.623.811 1.009.559.497 1.029.651 1.175.724.146.073.23.061.316-.037.085-.097.364-.424.461-.57.097-.145.194-.121.328-.073s.85.401.996.474c.145.073.242.109.279.17.036.061.036.353-.108.758z" />
+        {/* Ícone WhatsApp com proporção equilibrada e traçado limpo */}
+        <svg
+          className="w-5 h-5 sm:w-5.5 sm:h-5.5 fill-current shrink-0"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.04 3.67C14.24 3.67 16.31 4.53 17.87 6.08C19.42 7.64 20.28 9.71 20.28 11.92C20.28 16.46 16.58 20.16 12.04 20.16C10.6 20.16 9.18 19.78 7.93 19.04L7.63 18.86L4.52 19.68L5.35 16.65L5.15 16.33C4.34 15.04 3.8 13.5 3.8 11.91C3.8 7.37 7.5 3.67 12.04 3.67ZM8.73 7.34C8.54 7.34 8.24 7.41 7.98 7.7C7.72 7.98 6.98 8.67 6.98 10.08C6.98 11.49 8.01 12.85 8.16 13.04C8.3 13.23 10.15 16.08 12.98 17.3C13.65 17.59 14.18 17.76 14.59 17.89C15.26 18.11 15.87 18.08 16.36 18C16.9 17.92 18.04 17.31 18.28 16.65C18.52 15.98 18.52 15.41 18.45 15.3C18.37 15.18 18.19 15.11 17.91 14.97C17.63 14.83 16.27 14.16 16.01 14.07C15.76 13.97 15.57 13.93 15.39 14.21C15.2 14.49 14.67 15.11 14.51 15.3C14.35 15.48 14.19 15.5 13.91 15.36C13.63 15.23 12.74 14.93 11.68 13.99C10.86 13.25 10.3 12.35 10.14 12.07C9.98 11.79 10.13 11.64 10.27 11.5C10.39 11.38 10.54 11.18 10.68 11.02C10.82 10.85 10.87 10.74 10.96 10.55C11.05 10.36 11.01 10.2 10.94 10.06C10.87 9.92 10.31 8.54 10.08 7.98C9.85 7.44 9.62 7.51 9.45 7.51C9.29 7.5 9.1 7.49 8.91 7.49L8.73 7.34Z" />
         </svg>
       </a>
     </div>

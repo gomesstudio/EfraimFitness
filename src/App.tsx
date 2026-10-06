@@ -50,7 +50,7 @@ export default function App() {
       {/* 5. Modalidades & Serviços */}
       <Modalities onSelectModality={() => setTrialModalOpen(true)} />
 
-      {/* 6. Boutique & Produtos */}
+      {/* 6. Conveniência & Produtos */}
       <Products />
 
       {/* 7. Planos Exclusivos */}

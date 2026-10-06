@@ -23,16 +23,16 @@ export const Location: React.FC = () => {
             </span>
 
             <h2 className="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight text-center lg:text-left">
-              LOCALIZAÇÃO PRIVILEGIADA NO CENTRO
+              LOCALIZAÇÃO PRIVILEGIADA EM NANUQUE
             </h2>
 
             <p className="text-gray-300 text-xs sm:text-sm leading-relaxed text-center lg:text-left max-w-xl mx-auto lg:mx-0">
-              Fácil acesso, estacionamento nas proximidades e localização segura em Nanuque para o seu treino diário.
+              Fácil acesso, próximo à Lagoa dos Namorados no Bairro Israel Pinheiro, com amplo estacionamento nas proximidades e segurança para o seu treino diário.
             </p>
 
             <div className="bg-brand-surface border border-brand-border rounded-2xl p-5 sm:p-6 space-y-4 shadow-xl w-full max-w-lg mx-auto lg:mx-0 text-left">
               <div className="flex items-start gap-3.5 sm:gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#65f603]/10 text-[#65f603] flex items-center justify-center shrink-0 mt-0.5 border border-[#65f603]/40">
+                <div className="w-10 h-10 rounded-xl bg-[#5CFF00]/10 text-[#5CFF00] flex items-center justify-center shrink-0 mt-0.5 border border-[#5CFF00]/40">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div className="flex-1">
@@ -40,17 +40,17 @@ export const Location: React.FC = () => {
                     Endereço Oficial
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-300 mt-1 leading-relaxed">
-                    Rua Tiradentes, nº 377A — Prédio Israel Pinheiro
+                    Rua Tiradentes, nº 377A — Bairro Israel Pinheiro
                     <br />
-                    Nanuque - MG • CEP 39860-000
+                    Próximo à Lagoa dos Namorados • Nanuque - MG • CEP 39860-000
                   </p>
                   <button
                     onClick={handleCopyAddress}
-                    className="mt-2 text-[11px] font-bold text-[#65f603] hover:text-[#59e002] inline-flex items-center gap-1 transition cursor-pointer"
+                    className="mt-2 text-[11px] font-bold text-[#5CFF00] hover:text-[#52e600] inline-flex items-center gap-1 transition cursor-pointer"
                   >
                     {copied ? (
                       <>
-                        <Check className="w-3.5 h-3.5 text-[#65f603]" />
+                        <Check className="w-3.5 h-3.5 text-[#5CFF00]" />
                         <span>Endereço copiado!</span>
                       </>
                     ) : (
@@ -64,33 +64,19 @@ export const Location: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3.5 sm:gap-4 pt-3 border-t border-brand-border">
-                <div className="w-10 h-10 rounded-xl bg-[#65f603]/10 text-[#65f603] flex items-center justify-center shrink-0 mt-0.5 border border-[#65f603]/40">
+                <div className="w-10 h-10 rounded-xl bg-[#5CFF00]/10 text-[#5CFF00] flex items-center justify-center shrink-0 mt-0.5 border border-[#5CFF00]/40">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white uppercase tracking-wide">
                     Telefone &amp; WhatsApp
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#65f603] font-black mt-1">
+                  <p className="text-xs sm:text-sm text-[#5CFF00] font-black mt-1">
                     {GYM_INFO.phone}
                   </p>
                   <span className="text-[11px] text-gray-400">Atendimento de segunda a sexta-feira</span>
                 </div>
               </div>
-            </div>
-
-            {/* Action Button: Padrão Premium de Alto Nível */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 w-full">
-              <a
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#65f603] hover:bg-[#59e002] text-black font-extrabold text-[11px] sm:text-xs uppercase tracking-[0.09em] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-200 shadow-md hover:shadow-[0_0_18px_rgba(101,246,3,0.35)] active:scale-[0.98] group"
-                href={GYM_INFO.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MapPin className="w-3.5 h-3.5 fill-current shrink-0" />
-                <span>Abrir no Google Maps</span>
-                <ExclusiveArrowRight className="w-3 h-3" />
-              </a>
             </div>
           </div>
 
@@ -103,7 +89,7 @@ export const Location: React.FC = () => {
                   className="absolute inset-0 opacity-20 pointer-events-none"
                   style={{
                     background:
-                      'radial-gradient(circle, rgba(101, 246, 3, 0.18) 0%, transparent 70%)',
+                      'radial-gradient(circle, rgba(92, 255, 0, 0.18) 0%, transparent 70%)',
                   }}
                 />
 
@@ -117,7 +103,7 @@ export const Location: React.FC = () => {
                       alt="Academia Efraim Fitness"
                       className="h-14 sm:h-16 w-auto object-contain"
                       style={{
-                        filter: 'drop-shadow(0 0 12px rgba(101, 246, 3, 0.5))',
+                        filter: 'drop-shadow(0 0 12px rgba(92, 255, 0, 0.5))',
                       }}
                     />
                   </div>
@@ -126,8 +112,10 @@ export const Location: React.FC = () => {
                     <h4 className="text-white font-extrabold uppercase text-sm sm:text-base">
                       Academia Efraim Fitness
                     </h4>
-                    <p className="text-gray-400 text-xs mt-1">
-                      Rua Tiradentes, 377A • Centro • Nanuque - MG
+                    <p className="text-gray-300 text-xs mt-1">
+                      Rua Tiradentes, 377A • Bairro Israel Pinheiro
+                      <br />
+                      <span className="text-gray-400 text-[11px]">Próximo à Lagoa dos Namorados • Nanuque - MG</span>
                     </p>
                   </div>
 
@@ -135,9 +123,10 @@ export const Location: React.FC = () => {
                     href={GYM_INFO.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#65f603] hover:text-[#59e002] bg-black/60 border border-[#65f603]/60 px-3.5 py-1.5 rounded-full transition active:scale-[0.98] group"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#5CFF00] hover:text-black bg-black/70 hover:bg-[#5CFF00] border border-[#5CFF00]/60 px-4 py-2 rounded-full transition-all active:scale-[0.98] group"
                   >
-                    <span>Ver Rota no Mapa</span>
+                    <MapPin className="w-3.5 h-3.5 shrink-0" />
+                    <span>Ver no Google Maps</span>
                     <ExclusiveArrowRight className="w-3 h-3" />
                   </a>
                 </div>

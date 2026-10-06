@@ -1,19 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --color-brand-pitch: #070809;
-  --color-brand-dark: #0f1115;
-  --color-brand-surface: #14171d;
-  --color-brand-card: #161920;
+  --font-sans: 'Montserrat', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-brand-pitch: #000000;
+  --color-brand-dark: #080808;
+  --color-brand-surface: #121418;
+  --color-brand-card: #15181f;
   --color-brand-cardHover: #1c202a;
   --color-brand-border: #1f242d;
   --color-brand-borderLight: #2a313d;
-  --color-brand-lime: #65f603;
-  --color-brand-limeBright: #59e002;
-  --color-brand-neon: #65f603;
+  --color-brand-lime: #5CFF00;
+  --color-brand-limeBright: #65FF00;
+  --color-brand-neon: #5CFF00;
   --color-brand-muted: #6b7280;
-  --color-brand-slate: #94a3b8;
+  --color-brand-slate: #B8B8B8;
+}
+
+:root {
+  --color-black-main: #000000;
+  --color-black-sec: #080808;
+  --color-neon-green: #5CFF00;
+  --color-neon-alt: #65FF00;
+  --color-white-main: #FFFFFF;
+  --color-gray-main: #B8B8B8;
 }
 
 /* Barra de rolagem discreta, fina e não intrusiva em todas as versões de telas */
@@ -21,10 +30,12 @@ html {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
   overflow-x: hidden;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
 }
 
 body {
   overflow-x: hidden;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
 }
 
 /* Estilos para navegadores baseados em WebKit / Chromium (Chrome, Edge, Opera, Safari) */
@@ -44,7 +55,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(101, 246, 3, 0.45);
+  background: rgba(92, 255, 0, 0.5);
 }
 
 @keyframes beam-slide {
@@ -85,16 +96,16 @@ body {
 
 @layer utilities {
   .glow-lime {
-    box-shadow: 0 0 32px rgba(101, 246, 3, 0.35);
+    box-shadow: 0 0 28px rgba(92, 255, 0, 0.35);
   }
   .glow-lime-subtle {
-    box-shadow: 0 0 20px rgba(101, 246, 3, 0.2);
+    box-shadow: 0 0 16px rgba(92, 255, 0, 0.2);
   }
   .glow-lime-lg {
-    box-shadow: 0 0 50px rgba(101, 246, 3, 0.45);
+    box-shadow: 0 0 45px rgba(92, 255, 0, 0.45);
   }
   .text-glow {
-    text-shadow: 0 0 24px rgba(101, 246, 3, 0.55);
+    text-shadow: 0 0 20px rgba(92, 255, 0, 0.5);
   }
   .subtle-grid {
     background-size: 32px 32px;
