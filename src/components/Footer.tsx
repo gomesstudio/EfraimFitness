@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
         {/* Assinatura & Direitos Reservados */}
         <div className="flex flex-col items-center text-center space-y-1.5 text-gray-500 text-[11px] pt-4 border-t border-[#1f242d]/80 w-full max-w-sm">
           <p>© 2026 Academia Efraim Fitness • Todos os direitos reservados.</p>
-          <p className="text-gray-400 font-medium">Nanuque - MG • Athletic Luxury Experience</p>
+          <p className="text-gray-400 font-medium">Academia em Nanuque - MG • Musculação e Performance</p>
         </div>
       </div>
     </footer>

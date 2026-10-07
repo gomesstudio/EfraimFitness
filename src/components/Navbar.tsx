@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, Share2 } from 'lucide-react';
 import { IMAGES } from '../data/gymData';
+import { ShareModal } from './ShareModal';
 
 interface NavbarProps {}
 
@@ -8,6 +9,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
+  const [shareModalOpen, setShareModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +53,28 @@ export const Navbar: React.FC<NavbarProps> = () => {
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleShareClick = async () => {
+    // Se for dispositivo móvel e tiver suporte nativo ao share, aciona nativamente
+    if (
+      typeof navigator !== 'undefined' &&
+      navigator.share &&
+      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+    ) {
+      try {
+        await navigator.share({
+          title: 'Efraim Fitness | Academia em Nanuque - MG',
+          text: 'Conheça a Academia Efraim Fitness em Nanuque - MG! Musculação completa e acompanhamento personalizado.',
+          url: window.location.href,
+        });
+        return;
+      } catch (err: any) {
+        if (err?.name === 'AbortError') return;
+      }
+    }
+    // Abre o modal de compartilhamento refinado
+    setShareModalOpen(true);
   };
 
   return (
@@ -109,8 +133,30 @@ export const Navbar: React.FC<NavbarProps> = () => {
             })}
           </nav>
 
-          {/* 3. LADO DIREITO: Botão de Menu Mobile (Botão 'Fale Conosco' removido) */}
-          <div className="flex items-center">
+          {/* 3. LADO DIREITO: Atalho de Compartilhar Site no espaço vazio do cabeçalho & Menu Mobile */}
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            {/* Atalho Compartilhar no Desktop: Localizado no canto superior direito no espaço vazio */}
+            <button
+              onClick={handleShareClick}
+              className="hidden lg:inline-flex items-center gap-2 px-3.5 py-1.5 xl:px-4 xl:py-2 rounded-full bg-[#121418] hover:bg-[#1a1f26] border border-white/15 hover:border-[#5CFF00] text-gray-200 hover:text-[#5CFF00] text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(92,255,0,0.35)] cursor-pointer group active:scale-95"
+              title="Compartilhar site"
+              aria-label="Compartilhar site"
+            >
+              <Share2 className="w-3.5 h-3.5 text-[#5CFF00] group-hover:scale-110 transition-transform" />
+              <span>Compartilhar</span>
+            </button>
+
+            {/* Atalho Compartilhar no Mobile: Ícone rápido ao lado do menu */}
+            <button
+              onClick={handleShareClick}
+              className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-[#5CFF00] hover:border-[#5CFF00]/40 transition focus:outline-none"
+              title="Compartilhar site"
+              aria-label="Compartilhar site"
+            >
+              <Share2 className="w-4 h-4 text-[#5CFF00]" />
+            </button>
+
+            {/* Botão de Menu Mobile */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-[#5CFF00] transition focus:outline-none"
@@ -145,9 +191,29 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 );
               })}
             </nav>
+
+            {/* Opção de Compartilhar no menu mobile */}
+            <div className="pt-2 border-t border-white/10">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleShareClick();
+                }}
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-[#5CFF00]/10 border border-[#5CFF00]/30 text-[#5CFF00] text-xs font-bold uppercase tracking-wider hover:bg-[#5CFF00] hover:text-black transition-colors"
+              >
+                <Share2 className="w-4 h-4" />
+                <span>Compartilhar Site</span>
+              </button>
+            </div>
           </div>
         )}
       </header>
+
+      {/* Modal de Compartilhamento */}
+      <ShareModal
+        isOpen={shareModalOpen}
+        onClose={() => setShareModalOpen(false)}
+      />
 
       {/* Espaçador para manter o fluxo do documento com o cabeçalho fixo */}
       <div className="h-16 sm:h-[72px] shrink-0" aria-hidden="true" />
