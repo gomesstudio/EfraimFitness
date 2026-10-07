@@ -106,10 +106,10 @@ export const Products: React.FC = () => {
                 })}
               </div>
 
-              {/* Action Button: Padrão Premium de Alto Nível */}
+              {/* Action Button: Padrão Premium de Alto Nível e Proporcional no Mobile */}
               <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 w-full">
                 <a
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.09em] text-black bg-[#65f603] hover:bg-[#59e002] px-6 py-2.5 sm:py-3 rounded-full transition duration-200 shadow-md hover:shadow-[0_0_18px_rgba(101,246,3,0.35)] active:scale-[0.98] group"
+                  className="w-auto inline-flex items-center justify-center gap-2 text-[10.5px] sm:text-xs font-extrabold uppercase tracking-[0.08em] text-black bg-[#65f603] hover:bg-[#59e002] px-4.5 sm:px-6 py-2 sm:py-3 rounded-full transition duration-200 shadow-md hover:shadow-[0_0_18px_rgba(101,246,3,0.35)] active:scale-[0.98] group shrink-0 text-center"
                   href={createWhatsAppLink(
                     selectedProduct
                       ? `Olá, gostaria de saber o valor e disponibilidade de ${selectedProduct} na recepção da Efraim Fitness!`
@@ -118,13 +118,13 @@ export const Products: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ExclusiveWhatsAppIcon className="w-3.5 h-3.5 fill-current" />
+                  <ExclusiveWhatsAppIcon className="w-3.5 h-3.5 fill-current shrink-0" />
                   <span>
                     {selectedProduct
                       ? `Consultar ${selectedProduct} no WhatsApp`
                       : 'Consultar Disponibilidade na Recepção'}
                   </span>
-                  <ExclusiveArrowRight className="w-3 h-3" />
+                  <ExclusiveArrowRight className="w-3 h-3 shrink-0" />
                 </a>
               </div>
             </div>

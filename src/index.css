@@ -31,6 +31,7 @@ html {
   scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
   overflow-x: hidden;
   font-family: 'Montserrat', 'Poppins', sans-serif;
+  scroll-padding-top: 5rem;
 }
 
 body {

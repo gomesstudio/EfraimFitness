@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -12,11 +12,8 @@ import { Location } from './components/Location';
 import { FinalCta } from './components/FinalCta';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { TrialModal } from './components/TrialModal';
 
 export default function App() {
-  const [trialModalOpen, setTrialModalOpen] = useState(false);
-
   return (
     <div
       className="min-h-screen bg-brand-pitch text-white font-sans antialiased selection:bg-brand-lime selection:text-black"
@@ -30,10 +27,10 @@ export default function App() {
       }}
     >
       {/* 1. Header / Navigation */}
-      <Navbar onOpenTrialModal={() => setTrialModalOpen(true)} />
+      <Navbar />
 
       {/* 2. Hero Section */}
-      <Hero onOpenTrialModal={() => setTrialModalOpen(true)} />
+      <Hero />
 
       {/* 3. Sobre & 4 Pilares de Excelência */}
       <About />
@@ -48,13 +45,13 @@ export default function App() {
       <SectionDivider />
 
       {/* 5. Modalidades & Serviços */}
-      <Modalities onSelectModality={() => setTrialModalOpen(true)} />
+      <Modalities />
 
       {/* 6. Conveniência & Produtos */}
       <Products />
 
       {/* 7. Planos Exclusivos */}
-      <Plans onOpenTrialModal={() => setTrialModalOpen(true)} />
+      <Plans />
 
       {/* 8. Horários & Estrutura */}
       <Schedule />
@@ -63,14 +60,13 @@ export default function App() {
       <Location />
 
       {/* 10. CTA Final */}
-      <FinalCta onOpenTrialModal={() => setTrialModalOpen(true)} />
+      <FinalCta />
 
       {/* 11. Rodapé Completo */}
       <Footer />
 
-      {/* Floating Elements & Modals */}
+      {/* Floating Elements */}
       <FloatingWhatsApp />
-      <TrialModal isOpen={trialModalOpen} onClose={() => setTrialModalOpen(false)} />
     </div>
   );
 }
