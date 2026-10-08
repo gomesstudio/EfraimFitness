@@ -18,6 +18,8 @@ export const IMAGES = {
   heroLogo: "/logo.png",
   brandLogoRemote: "https://plain-enam-prod-public.komododecks.com/202610/05/N8aFuLbguonhLhNvpzX1/image.jpg",
   heroBackgroundRemote: "https://plain-enam-prod-public.komododecks.com/202610/05/wjnJq34pb4cSHSSKND8u/image.png",
+  aboutHighlight: "/about-highlight.png",
+  aboutHighlightRemote: "https://plain-enam-prod-public.komododecks.com/202610/08/c21SwXOXBWZvE9pQWFFX/image.png",
   facadeAbout: "https://lh3.googleusercontent.com/aida-public/AB6AXuDxm8TjnzLDSDBKzyQjoJnOvazO8Gb4eKnS88IaFbhp7hO6QadypFIt2rPQH28kaiAOCHuYD8lBIVS7gzhQq1oLr91pNM1Mu3pXBkb_iuEDvxsrIcC1pUJbBi6cbNu1Y0_pMiksawYrtBASnEHrkdYNpdZ3SRi5iVKSByX6QNtOqmHFu-c21ZdkejSo6FZVoHyzKWMZQN2_NOyONLHnpti-ZtkKCcmqu5catm5L7PwYqBjogYWoTF89XwCsejvjpNac",
   musculacao: "/modalidade-musculacao.png",
   funcional: "/modalidade-funcional.png",
