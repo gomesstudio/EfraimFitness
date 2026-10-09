@@ -12,6 +12,8 @@ export const Modalities: React.FC<ModalitiesProps> = () => {
       name: 'Musculação',
       badge: 'Hipertrofia & Força',
       image: IMAGES.musculacao,
+      fallbackPng: IMAGES.musculacaoPng,
+      fallbackRemote: IMAGES.musculacaoRemote,
       description:
         'Fortalecimento muscular, aumento de densidade óssea, ganho de massa magra e queima calórica contínua.',
       bullets: [
@@ -24,6 +26,8 @@ export const Modalities: React.FC<ModalitiesProps> = () => {
       name: 'Funcional',
       badge: 'Agilidade & Queima',
       image: IMAGES.funcional,
+      fallbackPng: IMAGES.funcionalPng,
+      fallbackRemote: IMAGES.funcionalRemote,
       description:
         'Circuitos dinâmicos com kettlebells, cordas e cones para ganho cardiovascular, mobilidade e condicionamento veloz.',
       bullets: [
@@ -36,6 +40,8 @@ export const Modalities: React.FC<ModalitiesProps> = () => {
       name: 'Avaliação Física',
       badge: 'Ciência Aplicada',
       image: IMAGES.avaliacao,
+      fallbackPng: IMAGES.avaliacaoPng,
+      fallbackRemote: IMAGES.avaliacaoRemote,
       description:
         'Bioimpedância detalhada e aferição de circunferências para acompanhar a evolução milímetro a milímetro.',
       bullets: [
@@ -48,6 +54,8 @@ export const Modalities: React.FC<ModalitiesProps> = () => {
       name: 'Personal & Consultoria',
       badge: 'Acompanhamento VIP',
       image: IMAGES.personal,
+      fallbackPng: IMAGES.personalPng,
+      fallbackRemote: IMAGES.personalRemote,
       description:
         'Treinos exclusivos com foco obsessivo nas suas metas e acompanhamento online para quem viaja ou tem rotina corrida.',
       bullets: [
@@ -96,9 +104,20 @@ export const Modalities: React.FC<ModalitiesProps> = () => {
               <div className="w-full aspect-[4/3] overflow-hidden relative bg-[#0a0c0e]">
                 <img
                   alt={`Modalidade ${item.name} Efraim Fitness`}
+                  width="1450"
+                  height="1085"
                   className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                   src={item.image}
                   loading="lazy"
+                  decoding="async"
+                  onError={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (item.fallbackPng && target.src !== item.fallbackPng) {
+                      target.src = item.fallbackPng;
+                    } else if (item.fallbackRemote && target.src !== item.fallbackRemote) {
+                      target.src = item.fallbackRemote;
+                    }
+                  }}
                 />
               </div>
 

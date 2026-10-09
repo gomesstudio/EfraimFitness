@@ -1,9 +1,8 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
-import { GYM_INFO, createWhatsAppLink } from '../data/gymData';
+import { createWhatsAppLink } from '../data/gymData';
 import {
   ExclusiveWhatsAppIcon,
-  ExclusiveInstagramIcon,
   ExclusiveArrowRight,
 } from './ExclusiveIcons';
 
@@ -32,27 +31,17 @@ export const FinalCta: React.FC = () => {
           Garanta sua vaga na Efraim Fitness e venha treinar com musculação completa, equipamentos de qualidade e suporte presencial em Nanuque.
         </p>
 
-        {/* Action Buttons: Padrão Premium de Alto Nível e Proporcional no Mobile */}
-        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5 w-full sm:w-auto mx-auto">
+        {/* Action Button: Garantir Matrícula */}
+        <div className="mt-6 sm:mt-8 flex items-center justify-center w-full sm:w-auto mx-auto">
           <a
             href={createWhatsAppLink('Olá! Quero me matricular na Efraim Fitness e começar a treinar!')}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-auto inline-flex items-center justify-center gap-2 bg-[#65f603] hover:bg-[#59e002] text-black font-extrabold text-[10.5px] sm:text-xs uppercase tracking-[0.08em] px-4.5 sm:px-7 py-2 sm:py-3.5 rounded-full transition-all duration-200 shadow-md hover:shadow-[0_0_20px_rgba(101,246,3,0.35)] active:scale-[0.98] cursor-pointer group shrink-0"
+            className="w-auto inline-flex items-center justify-center gap-2 bg-[#65f603] hover:bg-[#59e002] text-black font-extrabold text-[10.5px] sm:text-xs uppercase tracking-[0.08em] px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition-all duration-200 shadow-md hover:shadow-[0_0_20px_rgba(101,246,3,0.35)] active:scale-[0.98] cursor-pointer group shrink-0"
           >
             <ExclusiveWhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" />
             <span>Garantir Minha Matrícula</span>
             <ExclusiveArrowRight className="w-3 h-3" />
-          </a>
-
-          <a
-            className="w-auto inline-flex items-center justify-center gap-2 border border-[#65f603]/80 hover:border-[#65f603] text-white hover:bg-[#65f603] hover:text-black font-extrabold text-[10.5px] sm:text-xs uppercase tracking-[0.08em] px-4.5 sm:px-7 py-2 sm:py-3.5 rounded-full transition-all duration-200 bg-black/40 backdrop-blur-md active:scale-[0.98] group shrink-0"
-            href={GYM_INFO.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ExclusiveInstagramIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#65f603] group-hover:text-black transition-colors" />
-            <span>Seguir no Instagram</span>
           </a>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Dumbbell, ClipboardList, TrendingUp, Star, Smartphone, ArrowRight, ShieldCheck } from 'lucide-react';
-import { IMAGES, createWhatsAppLink } from '../data/gymData';
+import { Dumbbell, ClipboardList, TrendingUp, Star, Smartphone, ShieldCheck } from 'lucide-react';
+import { IMAGES } from '../data/gymData';
+import { VideoSection } from './VideoSection';
 
 export const About: React.FC = () => {
   const differentials = [
@@ -61,33 +62,35 @@ export const About: React.FC = () => {
                 {/* Linha de reflexo sutil superior metálica (luxo minimalista) */}
                 <div className="absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
 
-                {/* Container da Foto com Zoom e Efeito de Proximidade e Logo Centralizada na Moldura */}
-                <div className="relative w-full h-[320px] sm:h-[420px] md:h-[480px] lg:h-[520px] rounded-[1.25rem] sm:rounded-[1.5rem] overflow-hidden bg-black">
+                {/* Container da Foto sem cortes, exibindo a imagem completa em proporção nativa 4:3 */}
+                <div className="relative w-full aspect-[4/3] rounded-[1.25rem] sm:rounded-[1.5rem] overflow-hidden bg-black">
                   <img
                     src={IMAGES.aboutHighlight}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = IMAGES.aboutHighlightRemote;
+                      const target = e.currentTarget as HTMLImageElement;
+                      if (target.src !== IMAGES.aboutHighlightPng) {
+                        target.src = IMAGES.aboutHighlightPng;
+                      } else if (target.src !== IMAGES.aboutHighlightRemote) {
+                        target.src = IMAGES.aboutHighlightRemote;
+                      }
                     }}
                     alt="Ambiente e Treino na Academia Efraim Fitness"
-                    className="w-full h-full object-cover transform -translate-x-[14%] translate-y-[11%] scale-[1.26] sm:scale-[1.28] group-hover:scale-[1.32] origin-center transition-transform duration-700 ease-out select-none"
-                    style={{ objectPosition: '64% 39%' }}
+                    width="1448"
+                    height="1086"
+                    className="w-full h-full object-cover select-none transition-transform duration-500 group-hover:scale-[1.02]"
                     loading="lazy"
+                    decoding="async"
                   />
 
-                  {/* Vinheta luxuosa sutil e anel interno fino */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent pointer-events-none" />
+                  {/* Vinheta luxuosa sutil sem cobrir a foto */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute inset-0 ring-1 ring-inset ring-white/[0.08] rounded-[1.25rem] sm:rounded-[1.5rem] pointer-events-none" />
 
-                  {/* Barra Minimalista Dark Inferior */}
-                  <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between px-4 py-3 rounded-xl bg-black/75 backdrop-blur-md border border-white/[0.08]">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-2 h-2 rounded-full bg-[#65f603] shadow-[0_0_6px_#65f603]" />
-                      <span className="text-xs font-bold uppercase tracking-wider text-white">
-                        Efraim Fitness
-                      </span>
-                    </div>
-                    <span className="text-[11px] text-gray-400 font-medium tracking-wide">
-                      Alta Performance
+                  {/* Badge Minimalista Dark com Efraim Fitness */}
+                  <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/75 backdrop-blur-md border border-white/[0.08]">
+                    <div className="w-2 h-2 rounded-full bg-[#65f603] shadow-[0_0_6px_#65f603]" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-white">
+                      Efraim Fitness
                     </span>
                   </div>
 
@@ -120,33 +123,33 @@ export const About: React.FC = () => {
             {/* Textos explicativos institucionais */}
             <div className="space-y-3.5 text-gray-200 text-sm sm:text-base leading-relaxed font-normal max-w-xl">
               <p>
-                Na Academia Efraim Fitness, você encontra musculação, treinamento funcional e prescrição de treino online, aliados à avaliação física antropométrica, bioimpedância e acompanhamento personalizado.
+                Na Efraim Fitness, cada treino tem um propósito. Oferecemos musculação, treinamento funcional e prescrição de treinos online, com o suporte de avaliação física antropométrica, bioimpedância e acompanhamento personalizado.
               </p>
               <p className="text-gray-300">
-                Tudo para oferecer um treinamento mais direcionado, acompanhar sua evolução e ajudar você a alcançar seus objetivos.
+                Tudo isso para proporcionar um treinamento mais estratégico, monitorar sua evolução e ajudar você a conquistar resultados com mais consciência, consistência e foco nos seus objetivos.
               </p>
             </div>
 
-            {/* Diferenciais em grade estilizados com borda neon e ícones */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 pt-2 w-full max-w-xl">
+            {/* Diferenciais em grade estilizados com borda neon e ícones reduzidos */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 pt-1 w-full max-w-lg">
               {differentials.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={index}
-                    className="flex items-center justify-start gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[#65f603]/60 hover:bg-[#65f603]/5 transition-all duration-300 group text-left"
+                    className="flex items-center justify-start gap-2.5 py-2 px-2.5 sm:px-3 rounded-lg bg-white/[0.025] border border-white/[0.08] hover:border-[#65f603]/60 hover:bg-[#65f603]/5 transition-all duration-300 group text-left"
                   >
-                    {/* Círculo com borda verde idêntico ao da logo e ícone minimalista */}
-                    <div className="w-10 h-10 rounded-full border-2 border-[#65f603] bg-black/80 flex items-center justify-center text-[#65f603] shrink-0 group-hover:scale-110 group-hover:bg-[#65f603]/15 transition-all duration-300 shadow-sm">
-                      <Icon className="w-4 h-4 stroke-[2.2]" />
+                    {/* Círculo com borda verde idêntico ao da logo e ícone minimalista compacto */}
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-[1.5px] border-[#65f603] bg-black/90 flex items-center justify-center text-[#65f603] shrink-0 group-hover:scale-105 group-hover:bg-[#65f603]/15 transition-all duration-300 shadow-sm">
+                      <Icon className="w-3.5 h-3.5 stroke-[2]" />
                     </div>
 
-                    {/* Texto em duas linhas caixa-alta branco */}
+                    {/* Texto em duas linhas caixa-alta com tipografia proporcional e harmônica */}
                     <div className="flex flex-col text-left">
-                      <span className="text-[11px] sm:text-xs font-black uppercase text-white tracking-wider leading-tight group-hover:text-[#65f603] transition-colors">
+                      <span className="text-[10px] sm:text-[11px] font-bold uppercase text-white/90 tracking-wide leading-tight group-hover:text-[#65f603] transition-colors">
                         {item.line1}
                       </span>
-                      <span className="text-[11px] sm:text-xs font-black uppercase text-white tracking-wider leading-tight group-hover:text-[#65f603] transition-colors">
+                      <span className="text-[10px] sm:text-[11px] font-bold uppercase text-white/90 tracking-wide leading-tight group-hover:text-[#65f603] transition-colors">
                         {item.line2}
                       </span>
                     </div>
@@ -155,22 +158,18 @@ export const About: React.FC = () => {
               })}
             </div>
 
-            {/* Botão de ação para conversar no WhatsApp */}
-            <div className="pt-3 w-full sm:w-auto">
-              <a
-                href={createWhatsAppLink('Olá! Vim pelo site da Efraim Fitness e quero saber mais sobre a estrutura e treinos!')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 bg-[#65f603] hover:bg-[#52e600] text-black font-black text-xs sm:text-sm uppercase tracking-wider px-6 sm:px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg hover:shadow-[0_0_20px_rgba(101,246,3,0.4)] active:scale-[0.98] w-full sm:w-auto"
-              >
-                <span>FALAR COM NOSSA EQUIPE</span>
-                <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-              </a>
-            </div>
-
           </div>
 
         </div>
+
+        {/* Continuidade da Segunda Hero: Ala do Vídeo com Recado Especial */}
+        <VideoSection
+          shareUrl={IMAGES.videoJocelFlexClip}
+          videoSrc={IMAGES.videoJocelSrc}
+          videoRemoteSrc={IMAGES.videoJocelRemoteSrc}
+          posterSrc={IMAGES.videoJocelPoster}
+          remotePosterSrc={IMAGES.videoJocelRemotePoster}
+        />
 
       </div>
     </section>

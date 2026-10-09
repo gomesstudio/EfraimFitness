@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Menu, X, ChevronRight, Share2 } from 'lucide-react';
 import { IMAGES } from '../data/gymData';
-import { ShareModal } from './ShareModal';
+
+// Code splitting: ShareModal é carregado sob demanda apenas ao clicar em compartilhar
+const ShareModal = lazy(() => import('./ShareModal').then((m) => ({ default: m.ShareModal })));
 
 interface NavbarProps {}
 
@@ -64,16 +66,16 @@ export const Navbar: React.FC<NavbarProps> = () => {
     ) {
       try {
         await navigator.share({
-          title: 'Efraim Fitness | Academia em Nanuque - MG',
-          text: 'Conheça a Academia Efraim Fitness em Nanuque - MG! Musculação completa e acompanhamento personalizado.',
+          title: 'Efraim Fitness',
+          text: 'Conheça a Academia Efraim Fitness em Nanuque - MG! Saúde, treinamento e qualidade de vida.',
           url: window.location.href,
         });
         return;
-      } catch (err: any) {
-        if (err?.name === 'AbortError') return;
+      } catch {
+        // Usuário cancelou ou navegador não completou o share nativo
       }
     }
-    // Abre o modal de compartilhamento refinado
+    // Caso desktop ou fallback, abre o modal
     setShareModalOpen(true);
   };
 
@@ -98,6 +100,15 @@ export const Navbar: React.FC<NavbarProps> = () => {
               <img
                 src={IMAGES.brandLogo}
                 alt="Academia Efraim Fitness"
+                width="95"
+                height="48"
+                loading="eager"
+                decoding="async"
+                onError={(e) => {
+                  if (IMAGES.brandLogoPng && (e.currentTarget as HTMLImageElement).src !== IMAGES.brandLogoPng) {
+                    (e.currentTarget as HTMLImageElement).src = IMAGES.brandLogoPng;
+                  }
+                }}
                 className="h-10 sm:h-11 lg:h-12 w-auto object-contain block select-none -translate-y-[20%] transition-transform duration-200 group-hover:scale-105"
                 style={{
                   filter: 'drop-shadow(0 0 8px rgba(92, 255, 0, 0.45))',
@@ -209,11 +220,15 @@ export const Navbar: React.FC<NavbarProps> = () => {
         )}
       </header>
 
-      {/* Modal de Compartilhamento */}
-      <ShareModal
-        isOpen={shareModalOpen}
-        onClose={() => setShareModalOpen(false)}
-      />
+      {/* Modal de Compartilhamento carregado dinamicamente sob demanda */}
+      {shareModalOpen && (
+        <Suspense fallback={null}>
+          <ShareModal
+            isOpen={shareModalOpen}
+            onClose={() => setShareModalOpen(false)}
+          />
+        </Suspense>
+      )}
 
       {/* Espaçador para manter o fluxo do documento com o cabeçalho fixo */}
       <div className="h-16 sm:h-[72px] shrink-0" aria-hidden="true" />

@@ -41,11 +41,19 @@ export const Hero: React.FC<HeroProps> = () => {
             <img
               src={IMAGES.brandLogo}
               alt="Efraim Fitness"
+              width="420"
+              height="212"
               className="w-[220px] sm:w-[280px] md:w-[330px] lg:w-[370px] xl:w-[420px] max-w-full h-auto object-contain select-none pointer-events-none mx-auto lg:mx-0"
               style={{
                 filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 6px rgba(92, 255, 0, 0.12))',
               }}
               loading="eager"
+              decoding="async"
+              onError={(e) => {
+                if (IMAGES.brandLogoPng && (e.currentTarget as HTMLImageElement).src !== IMAGES.brandLogoPng) {
+                  (e.currentTarget as HTMLImageElement).src = IMAGES.brandLogoPng;
+                }
+              }}
             />
           </div>
 

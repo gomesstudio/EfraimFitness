@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Copy, Check } from 'lucide-react';
+import { MapPin, Copy, Check } from 'lucide-react';
 import { GYM_INFO, IMAGES } from '../data/gymData';
 import { ExclusiveArrowRight } from './ExclusiveIcons';
 
@@ -27,7 +27,7 @@ export const Location: React.FC = () => {
             </h2>
 
             <p className="text-gray-300 text-xs sm:text-sm leading-relaxed text-center lg:text-left max-w-xl mx-auto lg:mx-0">
-              Fácil acesso, próximo à Lagoa dos Namorados no Bairro Israel Pinheiro, com amplo estacionamento nas proximidades e segurança para o seu treino diário.
+              Localização estratégica, próxima à Lagoa dos Namorados, no bairro Israel Pinheiro, com fácil acesso para você treinar com praticidade e comodidade no dia a dia.
             </p>
 
             <div className="bg-brand-surface border border-brand-border rounded-2xl p-5 sm:p-6 space-y-4 shadow-xl w-full max-w-lg mx-auto lg:mx-0 text-left">
@@ -62,21 +62,6 @@ export const Location: React.FC = () => {
                   </button>
                 </div>
               </div>
-
-              <div className="flex items-start gap-3.5 sm:gap-4 pt-3 border-t border-brand-border">
-                <div className="w-10 h-10 rounded-xl bg-[#5CFF00]/10 text-[#5CFF00] flex items-center justify-center shrink-0 mt-0.5 border border-[#5CFF00]/40">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-white uppercase tracking-wide">
-                    Telefone &amp; WhatsApp
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#5CFF00] font-black mt-1">
-                    {GYM_INFO.phone}
-                  </p>
-                  <span className="text-[11px] text-gray-400">Atendimento de segunda a sexta-feira</span>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -101,6 +86,18 @@ export const Location: React.FC = () => {
                     <img
                       src={IMAGES.brandLogo}
                       alt="Academia Efraim Fitness"
+                      width="126"
+                      height="64"
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        const target = e.currentTarget as HTMLImageElement;
+                        if (target.src !== IMAGES.brandLogoPng) {
+                          target.src = IMAGES.brandLogoPng;
+                        } else if (target.src !== IMAGES.brandLogoRemote) {
+                          target.src = IMAGES.brandLogoRemote;
+                        }
+                      }}
                       className="h-14 sm:h-16 w-auto object-contain"
                       style={{
                         filter: 'drop-shadow(0 0 12px rgba(92, 255, 0, 0.5))',
@@ -112,11 +109,6 @@ export const Location: React.FC = () => {
                     <h4 className="text-white font-extrabold uppercase text-sm sm:text-base">
                       Academia Efraim Fitness
                     </h4>
-                    <p className="text-gray-300 text-xs mt-1">
-                      Rua Tiradentes, 377A • Bairro Israel Pinheiro
-                      <br />
-                      <span className="text-gray-400 text-[11px]">Próximo à Lagoa dos Namorados • Nanuque - MG</span>
-                    </p>
                   </div>
 
                   <a
@@ -126,7 +118,7 @@ export const Location: React.FC = () => {
                     className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#5CFF00] hover:text-black bg-black/70 hover:bg-[#5CFF00] border border-[#5CFF00]/60 px-4 py-2 rounded-full transition-all active:scale-[0.98] group"
                   >
                     <MapPin className="w-3.5 h-3.5 shrink-0" />
-                    <span>Ver no Google Maps</span>
+                    <span>Como Chegar</span>
                     <ExclusiveArrowRight className="w-3 h-3" />
                   </a>
                 </div>

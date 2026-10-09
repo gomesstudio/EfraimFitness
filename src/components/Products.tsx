@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Zap, Headphones, Droplets, Dumbbell, Smartphone, BatteryCharging } from 'lucide-react';
+import { Zap, Headphones, Droplets, Dumbbell, Smartphone, BatteryCharging, ShieldCheck } from 'lucide-react';
 import { IMAGES, createWhatsAppLink } from '../data/gymData';
 import { ExclusiveWhatsAppIcon, ExclusiveArrowRight } from './ExclusiveIcons';
 
@@ -7,6 +7,11 @@ export const Products: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
 
   const items = [
+    {
+      name: 'Películas para celular',
+      icon: ShieldCheck,
+      desc: 'Temos película de hidrogel para qualquer marca de celular, privacidade , fosca e transparente, realizamos a aplicação.'
+    },
     { name: 'Carregadores', icon: Zap, desc: 'Cabos iPhone, USB-C e adaptadores rápidos' },
     { name: 'Fones Bluetooth', icon: Headphones, desc: 'Som imersivo e encaixe firme para treinar focado' },
     { name: 'Garrafas & Shakers', icon: Droplets, desc: 'Squeezes e coqueteleiras térmicas de alta vedação' },
@@ -35,9 +40,20 @@ export const Products: React.FC = () => {
                   <div className="rounded-[18px] overflow-hidden bg-black relative flex items-center justify-center">
                     <img
                       alt="Cartaz Oficial de Conveniência e Acessórios Efraim Fitness"
+                      width="941"
+                      height="1672"
                       className="w-full h-auto object-contain block select-none group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                       src={IMAGES.productsPoster}
                       loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        const target = e.currentTarget as HTMLImageElement;
+                        if (target.src !== IMAGES.productsPosterPng) {
+                          target.src = IMAGES.productsPosterPng;
+                        } else if (target.src !== IMAGES.productsPosterRemote) {
+                          target.src = IMAGES.productsPosterRemote;
+                        }
+                      }}
                     />
                   </div>
                 </div>
@@ -92,7 +108,7 @@ export const Products: React.FC = () => {
                               : 'text-gray-400 group-hover:text-[#65f603]'
                           }`}
                         />
-                        <span className="text-[11px] sm:text-xs font-semibold text-gray-200 group-hover:text-white transition line-clamp-1">
+                        <span className="text-[11px] sm:text-xs font-semibold text-gray-200 group-hover:text-white transition leading-snug line-clamp-2">
                           {prod.name}
                         </span>
                       </div>
