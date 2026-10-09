@@ -43,14 +43,12 @@ export const IMAGES = {
   facadeGallery: "https://lh3.googleusercontent.com/aida-public/AB6AXuA_BTEoS7oEDyV-KgvmE5ZNnL1E-qkc0PsbL5YHdeupk6dYj9UQ8XCT36XReKDO_2388-xqAkCmtru90pHz_LZARgAmDX9Aumt91h1Up9oApRh8BCFAjn2DBRHajpjKOzIkJNZOAlyZkRqIEqqIQXF9bfGuIIjxNoSFK6Zm5kp-iGN2dVU2BQEQ5FqpndoVDHLDOpZ_abyP8J4HwpzxlO5T035vVNj0mXBSkp9zY59RMf5yfWDpKwoT-dsJgkwbMUvG",
   trainingGallery1: "https://lh3.googleusercontent.com/aida-public/AB6AXuCCSbd19K83_GKSBqpRrtWWpPJ1FcLkxhWAHEZPw9BLT1sIHF134kC_Bx9yDMS-_caXKP95GPPsoqt-8so8x_RcFat-3_bfYhh7xfXgQPxuT_uqJfzVlavs60Tuw9dFs_ESJlRz17AWj9tuNBoEb9CSV3WSXTOcDQpASlgT0SzLcF_p6hZRGaVCXReY4c2rw_QEWDNs-sFiK6PG57EkMb6manx2quR1ydolMAbf9X4bjRZf61vjJzZqCgT2EIfgPWjY",
   trainingGallery2: "https://lh3.googleusercontent.com/aida-public/AB6AXuAlYIK5ECr5uPiOmx83AMn41jS6LzZANcgCVuBm4b1m-k2m8UJPVYyLI5ftllfH9q2TnuSGbFj-uJZl-GXwCIzDhSTz3GerxPOSKbDqy0w9itr5QDcVxv0CQny4AixXKsZqgasMGbIUt5-6kWEDxiK8wAZ2TKvjsmuNlD0v-MAkK_QoDUJKTnrW3W2bTsks5ndzwMNNcQv6i4DR_K6n1RsLHWKccsHVx52VRgkYh7YuKyEVI38vEY6rE2ChVhV86Lnj",
-  videoJocelFlexClip: "https://www.flexclip.com/pt/share/16571114xJbGYK9LmIDFbTg55MWOqNVMTZNiAcvs.html",
-  videoJocelSrc: "/video-jocel.mp4",
-  videoJocelRemoteSrc: "https://www.flexclip.com/16571114/1791544547827-xJbGYK9LmIDFbTg55MWOqNVMTZNiAcvs.mp4?cc=share",
+  videoJocelYouTube: "https://youtube.com/shorts/FtneDtNmbFU?feature=share",
+  videoJocelYouTubeId: "FtneDtNmbFU",
+  videoJocelEmbedUrl: "https://www.youtube-nocookie.com/embed/FtneDtNmbFU?autoplay=0&controls=1&rel=0&playsinline=1&iv_load_policy=3",
   videoJocelPoster: "/video-jocel-cover.webp",
   videoJocelPosterJpg: "/video-jocel-cover.jpg",
   videoJocelRemotePoster: "https://www.flexclip.com/xJbGYK9LmIDFbTg55MWOqNVMTZNiAcvs/share-cover.jpg?cc=share",
-  videoJocelYouTube: "https://youtube.com/shorts/SFuGTo7hj5U?feature=share",
-  videoJocelYouTubeId: "SFuGTo7hj5U",
 };
 
 export interface GymPlan {

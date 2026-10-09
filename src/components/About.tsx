@@ -164,9 +164,7 @@ export const About: React.FC = () => {
 
         {/* Continuidade da Segunda Hero: Ala do Vídeo com Recado Especial */}
         <VideoSection
-          shareUrl={IMAGES.videoJocelFlexClip}
-          videoSrc={IMAGES.videoJocelSrc}
-          videoRemoteSrc={IMAGES.videoJocelRemoteSrc}
+          videoId={IMAGES.videoJocelYouTubeId}
           posterSrc={IMAGES.videoJocelPoster}
           remotePosterSrc={IMAGES.videoJocelRemotePoster}
         />
