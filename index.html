@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Efraim Fitness | Academia em Nanuque - MG</title>
-    <meta name="description" content="Academia Efraim Fitness em Nanuque - MG. Musculação, treinamento funcional, avaliação física com bioimpedância e acompanhamento exclusivo." />
+    <meta name="description" content="Academia Efraim Fitness em Nanuque - MG. Musculação, treinamento funcional, avaliação física com bioimpedância e acompanhamento exclusivo no Bairro Israel Pinheiro." />
     
-    <!-- Open Graph / Compartilhamento em Redes Sociais (WhatsApp, Instagram, Facebook, LinkedIn) -->
+    <!-- Indexação e Rastreamento para Googlebot -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://efraimfitness.com.br/" />
+
+    <!-- Open Graph / Redes Sociais (WhatsApp, Instagram, Facebook, LinkedIn) -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Academia Efraim Fitness" />
     <meta property="og:title" content="Efraim Fitness | Academia em Nanuque - MG" />
     <meta property="og:description" content="Venha treinar na Academia Efraim Fitness em Nanuque - MG! Musculação de qualidade, treinamento funcional dinâmico, bioimpedância e acompanhamento exclusivo próxima à Lagoa dos Namorados." />
-    <meta property="og:image" content="/og-image.jpg" />
-    <meta property="og:image:secure_url" content="/og-image.jpg" />
+    <meta property="og:url" content="https://efraimfitness.com.br/" />
+    <meta property="og:image" content="https://efraimfitness.com.br/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://efraimfitness.com.br/og-image.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -23,34 +29,92 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Efraim Fitness | Academia em Nanuque - MG" />
     <meta name="twitter:description" content="Academia Efraim Fitness em Nanuque - MG. Musculação, treinamento funcional e bioimpedância no Bairro Israel Pinheiro." />
-    <meta name="twitter:image" content="/og-image.jpg" />
+    <meta name="twitter:image" content="https://efraimfitness.com.br/og-image.jpg" />
     <meta name="twitter:image:alt" content="Apresentação Oficial da Academia Efraim Fitness" />
 
-    <!-- Schema.org Dados Estruturados (JSON-LD) -->
+    <!-- Schema.org Dados Estruturados Completos (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ExerciseGym",
-      "name": "Academia Efraim Fitness",
-      "alternateName": "Efraim Fitness",
-      "description": "Academia de musculação, treinamento funcional e bioimpedância em Nanuque - MG.",
-      "image": "/og-image.jpg",
-      "logo": "/logo.jpg",
-      "telephone": "+5533999523838",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Tiradentes, 377A",
-        "addressLocality": "Nanuque",
-        "addressRegion": "MG",
-        "postalCode": "39860-000",
-        "addressCountry": "BR"
-      },
-      "priceRange": "$$"
+      "@graph": [
+        {
+          "@type": ["ExerciseGym", "HealthClub", "SportsActivityLocation"],
+          "@id": "https://efraimfitness.com.br/#gym",
+          "name": "Academia Efraim Fitness",
+          "alternateName": "Efraim Fitness",
+          "url": "https://efraimfitness.com.br/",
+          "logo": "https://efraimfitness.com.br/logo.webp",
+          "image": [
+            "https://efraimfitness.com.br/og-image.jpg",
+            "https://efraimfitness.com.br/hero-bg-new.webp"
+          ],
+          "description": "Academia de musculação, treinamento funcional, avaliação física com bioimpedância e acompanhamento personalizado em Nanuque - MG.",
+          "telephone": "+5533999523838",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Tiradentes, nº 377A — Bairro Israel Pinheiro (Próximo à Lagoa dos Namorados)",
+            "addressLocality": "Nanuque",
+            "addressRegion": "MG",
+            "postalCode": "39860-000",
+            "addressCountry": "BR"
+          },
+          "hasMap": "https://maps.app.goo.gl/b6vaUTYg91N6sUSn8",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "05:00",
+              "closes": "10:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "14:00",
+              "closes": "21:00"
+            }
+          ],
+          "currenciesAccepted": "BRL",
+          "paymentAccepted": "Dinheiro, Cartão de Crédito, Cartão de Débito, PIX",
+          "priceRange": "R$ 80,00 - R$ 99,90",
+          "sameAs": [
+            "https://instagram.com/efraimfitness_",
+            "https://maps.app.goo.gl/b6vaUTYg91N6sUSn8"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://efraimfitness.com.br/#website",
+          "url": "https://efraimfitness.com.br/",
+          "name": "Efraim Fitness",
+          "description": "Academia Efraim Fitness em Nanuque - MG. Musculação, treinamento funcional e bioimpedância.",
+          "inLanguage": "pt-BR",
+          "publisher": {
+            "@id": "https://efraimfitness.com.br/#gym"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://efraimfitness.com.br/#webpage",
+          "url": "https://efraimfitness.com.br/",
+          "name": "Efraim Fitness | Academia em Nanuque - MG",
+          "description": "Academia Efraim Fitness em Nanuque - MG. Musculação, treinamento funcional, avaliação física com bioimpedância e acompanhamento exclusivo.",
+          "inLanguage": "pt-BR",
+          "isPartOf": {
+            "@id": "https://efraimfitness.com.br/#website"
+          },
+          "about": {
+            "@id": "https://efraimfitness.com.br/#gym"
+          }
+        }
+      ]
     }
     </script>
-    <meta name="theme-color" content="#5CFF00" />
-    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
-    <link rel="apple-touch-icon" href="/logo.jpg" />
+
+    <meta name="theme-color" content="#070809" />
+    <link rel="icon" type="image/webp" href="/logo.webp" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
     <!-- Preload das imagens críticas da primeira tela (Hero) -->
     <link rel="preload" as="image" href="/hero-bg-new.webp" type="image/webp" fetchpriority="high" />
     <link rel="preload" as="image" href="/logo.webp" type="image/webp" fetchpriority="high" />

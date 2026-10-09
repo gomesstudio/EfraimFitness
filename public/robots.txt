@@ -1,0 +1,17 @@
+# Robots.txt - Academia Efraim Fitness (Nanuque - MG)
+# Permite rastreamento completo de recursos essenciais para Googlebot e outros indexadores
+
+User-agent: *
+Allow: /
+
+# Recursos estáticos necessários para renderização visual completa
+Allow: /assets/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.webp$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+
+# Endereço absoluto oficial do Sitemap
+Sitemap: https://efraimfitness.com.br/sitemap.xml

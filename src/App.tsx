@@ -18,18 +18,36 @@ const FloatingWhatsApp = lazy(() => import('./components/FloatingWhatsApp').then
 export default function App() {
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
-      const fullUrl = window.location.href;
       const origin = window.location.origin;
 
-      // Sincroniza canonical e Open Graph com a URL absoluta do domínio
+      const isCustomDomain =
+        !window.location.hostname.includes('run.app') &&
+        !window.location.hostname.includes('localhost') &&
+        !window.location.hostname.includes('127.0.0.1');
+
+      const canonicalUrl = isCustomDomain
+        ? `${origin}${window.location.pathname.replace(/\/+$/, '') || '/'}`
+        : 'https://efraimfitness.com.br/';
+
+      // 1. Sincroniza canonical absoluto
+      let canonicalLink = document.querySelector('link[rel="canonical"]');
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.setAttribute('href', canonicalUrl);
+
+      // 2. Sincroniza Open Graph URL
       let ogUrl = document.querySelector('meta[property="og:url"]');
       if (!ogUrl) {
         ogUrl = document.createElement('meta');
         ogUrl.setAttribute('property', 'og:url');
         document.head.appendChild(ogUrl);
       }
-      ogUrl.setAttribute('content', fullUrl);
+      ogUrl.setAttribute('content', canonicalUrl);
 
+      // 3. Sincroniza imagens sociais com URL absoluta
       const ogImage = document.querySelector('meta[property="og:image"]');
       if (ogImage) {
         ogImage.setAttribute('content', `${origin}/og-image.jpg`);
