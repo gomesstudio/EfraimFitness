@@ -47,20 +47,21 @@ export default function App() {
       }
       ogUrl.setAttribute('content', canonicalUrl);
 
-      // 3. Sincroniza imagens sociais com URL absoluta
+      // 3. Sincroniza imagens sociais com URL oficial da logo
+      const officialLogoUrl = 'https://plain-enam-prod-public.komododecks.com/202610/05/N8aFuLbguonhLhNvpzX1/image.jpg';
       const ogImage = document.querySelector('meta[property="og:image"]');
       if (ogImage) {
-        ogImage.setAttribute('content', `${origin}/og-image.jpg`);
+        ogImage.setAttribute('content', officialLogoUrl);
       }
 
       const ogSecureImage = document.querySelector('meta[property="og:image:secure_url"]');
       if (ogSecureImage) {
-        ogSecureImage.setAttribute('content', `${origin}/og-image.jpg`);
+        ogSecureImage.setAttribute('content', officialLogoUrl);
       }
 
       const twitterImage = document.querySelector('meta[name="twitter:image"]');
       if (twitterImage) {
-        twitterImage.setAttribute('content', `${origin}/og-image.jpg`);
+        twitterImage.setAttribute('content', officialLogoUrl);
       }
     }
   }, []);
