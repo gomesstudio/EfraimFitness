@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { IMAGES, createWhatsAppLink } from '../data/gymData';
 import { ExclusiveWhatsAppIcon, ExclusiveArrowRight } from './ExclusiveIcons';
 
@@ -69,7 +70,13 @@ export const Modalities: React.FC<ModalitiesProps> = () => {
   return (
     <section id="modalidades" className="py-16 sm:py-20 lg:py-24 bg-brand-pitch border-b border-brand-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-4"
+        >
           <div className="text-center md:text-left">
             <span className="text-xs uppercase font-extrabold tracking-widest text-[#65f603] block">
               VARIEDADE &amp; INTENSIDADE
@@ -92,12 +99,16 @@ export const Modalities: React.FC<ModalitiesProps> = () => {
               <ExclusiveArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
-          {modalities.map((item) => (
-            <div
+          {modalities.map((item, index) => (
+            <motion.div
               key={item.name}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="group relative rounded-2xl overflow-hidden border border-brand-border bg-brand-surface hover:border-[#5CFF00]/60 transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-black/60"
             >
               {/* Retângulo da Imagem em Proporção Exata 4:3 (Sem Cortes) */}
@@ -155,7 +166,7 @@ export const Modalities: React.FC<ModalitiesProps> = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

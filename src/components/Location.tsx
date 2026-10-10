@@ -23,7 +23,7 @@ export const Location: React.FC = () => {
             </span>
 
             <h2 className="text-[clamp(1.6rem,4vw,2.5rem)] font-black uppercase text-white tracking-tight text-center lg:text-left text-balance">
-              LOCALIZAÇÃO PRIVILEGIADA EM NANUQUE
+              LOCALIZAÇÃO PRIVILEGIADA
             </h2>
 
             <p className="text-gray-300 text-xs sm:text-sm leading-relaxed text-center lg:text-left max-w-xl mx-auto lg:mx-0">

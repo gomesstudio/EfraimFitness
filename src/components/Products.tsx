@@ -122,13 +122,13 @@ export const Products: React.FC = () => {
                 })}
               </div>
 
-              {/* Action Button: Padrão Premium proporcional e alinhado */}
+              {/* Action Button: Padrão refinado, discreto e proporcional */}
               <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 w-full">
                 <a
-                  className="w-full max-w-sm sm:w-auto inline-flex items-center justify-center gap-2 text-xs font-extrabold uppercase tracking-wider text-black bg-[#65f603] hover:bg-[#59e002] px-6 py-3.5 min-h-[46px] rounded-full transition duration-200 shadow-md hover:shadow-[0_0_18px_rgba(101,246,3,0.35)] active:scale-[0.98] group shrink-0 text-center"
+                  className="w-auto inline-flex items-center justify-center gap-2 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-black bg-[#65f603] hover:bg-[#59e002] px-4 sm:px-5 py-2.5 min-h-[38px] sm:min-h-[40px] rounded-full transition duration-200 shadow-sm hover:shadow-[0_0_14px_rgba(101,246,3,0.3)] active:scale-[0.98] group shrink-0 text-center"
                   href={createWhatsAppLink(
                     selectedProduct
-                      ? `Olá, gostaria de saber o valor e disponibilidade de ${selectedProduct} na recepção da Efraim Fitness!`
+                      ? `Olá, gostaria de consultar a disponibilidade de ${selectedProduct} na recepção da Efraim Fitness!`
                       : 'Olá, gostaria de consultar os produtos e acessórios disponíveis na recepção da Efraim Fitness!'
                   )}
                   target="_blank"
@@ -137,8 +137,8 @@ export const Products: React.FC = () => {
                   <ExclusiveWhatsAppIcon className="w-3.5 h-3.5 fill-current shrink-0" />
                   <span>
                     {selectedProduct
-                      ? `Consultar ${selectedProduct} no WhatsApp`
-                      : 'Consultar Disponibilidade na Recepção'}
+                      ? `Consultar ${selectedProduct}`
+                      : 'CONSULTAR RECEPÇÃO'}
                   </span>
                   <ExclusiveArrowRight className="w-3 h-3 shrink-0" />
                 </a>
