@@ -6,26 +6,26 @@ import { ExclusiveArrowRight } from './ExclusiveIcons';
 export const Schedule: React.FC = () => {
   return (
     <section id="horarios" className="py-16 sm:py-20 lg:py-24 bg-brand-pitch border-b border-brand-border/60">
-      <div className="max-w-[1536px] mx-auto px-5 sm:px-8 lg:px-[5%]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Cabeçalho da Seção */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#5CFF00] block">
             ROTINA &amp; DISCIPLINA
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white tracking-tight mt-1">
+          <h2 className="text-[clamp(1.6rem,4vw,2.5rem)] font-black uppercase text-white tracking-tight mt-1 text-balance">
             HORÁRIO DE FUNCIONAMENTO
           </h2>
-          <p className="text-gray-300 text-xs sm:text-sm lg:text-base mt-3 leading-relaxed">
+          <p className="text-gray-300 text-xs sm:text-sm lg:text-base mt-2.5 leading-relaxed max-w-xl mx-auto">
             Treinos de <strong>segunda a sexta-feira</strong> em dois turnos dedicados: manhã (05h às 10h) e tarde/noite (14h às 21h).
           </p>
         </div>
 
         {/* Grade de Turnos e Horários Principais */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 max-w-4xl mx-auto items-stretch">
           
           {/* Card 1: Turno Manhã (Segunda a Sexta) */}
-          <div className="bg-brand-surface border border-brand-border hover:border-[#5CFF00]/70 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl hover:shadow-black/60 group">
+          <div className="bg-brand-surface border border-brand-border hover:border-[#5CFF00]/70 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl hover:shadow-black/60 group h-full">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5CFF00]/10 border border-[#5CFF00]/30 text-[#5CFF00] text-[11px] font-black uppercase tracking-wider">
@@ -70,7 +70,7 @@ export const Schedule: React.FC = () => {
           </div>
 
           {/* Card 2: Turno Tarde & Noite (Segunda a Sexta) */}
-          <div className="bg-brand-surface border border-brand-border hover:border-[#5CFF00]/70 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl hover:shadow-black/60 group">
+          <div className="bg-brand-surface border border-brand-border hover:border-[#5CFF00]/70 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl hover:shadow-black/60 group h-full">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5CFF00]/10 border border-[#5CFF00]/30 text-[#5CFF00] text-[11px] font-black uppercase tracking-wider">
@@ -136,7 +136,7 @@ export const Schedule: React.FC = () => {
             href={createWhatsAppLink('Olá! Gostaria de falar com a recepção da Efraim Fitness sobre horários e matrículas.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#5CFF00] hover:text-[#52e600] shrink-0 transition"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs font-black uppercase tracking-wider text-[#5CFF00] hover:text-black hover:bg-[#5CFF00] border border-[#5CFF00]/40 px-4 py-2.5 rounded-full shrink-0 transition min-h-[44px]"
           >
             <span>Falar com a recepção</span>
             <ExclusiveArrowRight className="w-3.5 h-3.5" />

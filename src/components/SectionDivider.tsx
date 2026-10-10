@@ -11,7 +11,7 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({ className = '' }
       aria-hidden="true"
     >
       {/* Contêiner de largura máxima idêntico aos containers das seções */}
-      <div className="relative w-full max-w-[1536px] px-5 sm:px-8 lg:px-[5%] flex items-center justify-center">
+      <div className="relative w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         {/* Linha de base discreta: gradiente suave das extremidades transparentes até o centro */}
         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent relative overflow-hidden">
           {/* Feixe animado de luz verde (#65f603) que desliza de um lado ao outro */}

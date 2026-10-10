@@ -30,20 +30,20 @@ export const Hero: React.FC<HeroProps> = () => {
       <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/65 via-black/35 via-50% to-transparent pointer-events-none" />
       <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/50 via-transparent to-black/15 pointer-events-none" />
 
-      {/* 3. CONTAINER PRINCIPAL: Conteúdo perfeitamente equilibrado e centralizado verticalmente no Viewport (100vh) */}
-      <div className="relative z-10 w-full max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 h-full flex flex-col justify-center items-center lg:items-start pt-8 pb-16 sm:pt-10 sm:pb-20 lg:py-0">
+      {/* 3. CONTAINER PRINCIPAL: Conteúdo perfeitamente equilibrado e centralizado verticalmente no Viewport */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center lg:items-start pt-6 pb-16 sm:py-12 lg:py-0">
         
-        {/* Bloco de Conteúdo: hero-content posicionado na área esquerda-centro e ajustado um pouco mais acima */}
-        <div className="hero-content w-full lg:max-w-[660px] xl:max-w-[720px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-4 sm:space-y-5 lg:space-y-6 my-auto -translate-y-3 sm:-translate-y-4 lg:-translate-y-6 xl:-translate-y-8 mx-auto lg:mx-0 lg:ml-2 xl:ml-6">
+        {/* Bloco de Conteúdo: posicionado com centralização natural e harmônica */}
+        <div className="hero-content w-full lg:max-w-[660px] xl:max-w-[720px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-4 sm:space-y-5 lg:space-y-6 my-auto mx-auto lg:mx-0">
           
-          {/* 1. LOGO EFRAIM FITNESS: Presença limpa e elegante com brilho reduzido e sutil */}
+          {/* 1. LOGO EFRAIM FITNESS: Presença limpa e elegante */}
           <div className="w-full flex items-center justify-center lg:justify-start">
             <img
               src={IMAGES.brandLogo}
               alt="Efraim Fitness"
               width="420"
               height="212"
-              className="w-[220px] sm:w-[280px] md:w-[330px] lg:w-[370px] xl:w-[420px] max-w-full h-auto object-contain select-none pointer-events-none mx-auto lg:mx-0"
+              className="w-[200px] min-[360px]:w-[240px] sm:w-[280px] md:w-[320px] lg:w-[360px] xl:w-[400px] max-w-full h-auto object-contain select-none pointer-events-none mx-auto lg:mx-0"
               style={{
                 filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 6px rgba(92, 255, 0, 0.12))',
               }}
@@ -57,31 +57,31 @@ export const Hero: React.FC<HeroProps> = () => {
             />
           </div>
 
-          {/* 2. TÍTULO PRINCIPAL: 2 Linhas Inteiras, Centralizado no Mobile e Alinhado na Área Esquerda-Centro no Desktop */}
-          <h1 className="w-full uppercase tracking-tight leading-[1.02] sm:leading-[0.98] text-center lg:text-left flex flex-col items-center lg:items-start">
+          {/* 2. TÍTULO PRINCIPAL: 2 Linhas com tipografia clamp harmônica para qualquer tela */}
+          <h1 className="w-full uppercase tracking-tight leading-[1.05] sm:leading-[0.98] text-center lg:text-left flex flex-col items-center lg:items-start">
             {/* Linha 1: 'SEU OBJETIVO.' (BRANCO) */}
-            <span className="block font-black text-white text-[clamp(1.4rem,6.2vw,2.5rem)] sm:text-[clamp(2.4rem,5.2vw,3.6rem)] lg:text-[56px] xl:text-[64px] tracking-tight whitespace-nowrap text-center lg:text-left mx-auto lg:mx-0 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
+            <span className="block font-black text-white text-[clamp(1.65rem,6.5vw,3.75rem)] tracking-tight text-center lg:text-left mx-auto lg:mx-0 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
               SEU OBJETIVO.
             </span>
             {/* Linha 2: 'NOSSA MISSÃO.' (VERDE NEON/LIMA #5CFF00) */}
-            <span className="block font-black text-[#5CFF00] text-[clamp(1.4rem,6.2vw,2.5rem)] sm:text-[clamp(2.4rem,5.2vw,3.6rem)] lg:text-[56px] xl:text-[64px] tracking-tight mt-1 whitespace-nowrap text-center lg:text-left mx-auto lg:mx-0 drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
+            <span className="block font-black text-[#5CFF00] text-[clamp(1.65rem,6.5vw,3.75rem)] tracking-tight mt-1 text-center lg:text-left mx-auto lg:mx-0 drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
               NOSSA MISSÃO.
             </span>
           </h1>
 
-          {/* 3. DESCRIÇÃO: Largura balanceada de ~460px */}
-          <p className="text-[#E0E0E0] text-sm sm:text-[15px] lg:text-base leading-relaxed font-normal max-w-[460px] text-center lg:text-left mx-auto lg:mx-0 px-2 sm:px-0 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
+          {/* 3. DESCRIÇÃO: Largura balanceada */}
+          <p className="text-[#E0E0E0] text-xs min-[360px]:text-sm sm:text-[15px] lg:text-base leading-relaxed font-normal max-w-[480px] text-center lg:text-left mx-auto lg:mx-0 px-1 sm:px-0 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
             Musculação, treinamento funcional e acompanhamento personalizado para você evoluir de verdade.
           </p>
 
-          {/* 4. BOTÕES CTA: Lado a Lado no Desktop e Proporcionais/Compactos no Mobile */}
-          <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-4 w-full sm:w-auto mx-auto lg:mx-0">
+          {/* 4. BOTÕES CTA: Lado a lado no Desktop e mesmo tamanho alinhados no Mobile */}
+          <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto lg:mx-0">
             {/* BOTÃO PRINCIPAL: QUERO COMEÇAR → */}
             <a
               href={createWhatsAppLink('Olá! Vim pelo site da Efraim Fitness e quero começar a treinar!')}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#5CFF00] hover:bg-[#52e600] text-black font-extrabold text-[11px] sm:text-[13px] uppercase tracking-wider px-4.5 sm:px-7 py-2 sm:py-3.5 rounded-full transition-all duration-200 shadow-lg hover:shadow-[0_0_20px_rgba(92,255,0,0.5)] active:scale-[0.98] w-auto shrink-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#5CFF00] hover:bg-[#52e600] border-2 border-[#5CFF00] text-black font-extrabold text-xs sm:text-[13px] uppercase tracking-wider px-6 sm:px-7 py-3 sm:py-3.5 min-h-[48px] rounded-full transition-all duration-200 shadow-lg hover:shadow-[0_0_20px_rgba(92,255,0,0.5)] active:scale-[0.98] shrink-0 text-center"
             >
               {/* Badge Circular Esportivo */}
               <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-black flex items-center justify-center shrink-0">
@@ -104,12 +104,12 @@ export const Hero: React.FC<HeroProps> = () => {
               </svg>
             </a>
 
-            {/* BOTÃO SECUNDÁRIO: [ÍCONE INSTAGRAM] NOSSO INSTAGRAM */}
+            {/* BOTÃO SECUNDÁRIO: NOSSO INSTAGRAM */}
             <a
               href={GYM_INFO.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 border-2 border-[#5CFF00] text-white hover:bg-[#5CFF00] hover:text-black font-extrabold text-[11px] sm:text-[13px] uppercase tracking-wider px-4 sm:px-7 py-2 sm:py-3.5 rounded-full transition-all duration-200 bg-black/40 backdrop-blur-sm active:scale-[0.98] group w-auto shrink-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border-2 border-[#5CFF00] text-white hover:bg-[#5CFF00] hover:text-black font-extrabold text-xs sm:text-[13px] uppercase tracking-wider px-6 sm:px-7 py-3 sm:py-3.5 min-h-[48px] rounded-full transition-all duration-200 bg-black/40 backdrop-blur-sm active:scale-[0.98] group shrink-0 text-center"
             >
               {/* Ícone Instagram Verde */}
               <svg
@@ -119,7 +119,7 @@ export const Hero: React.FC<HeroProps> = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#5CFF00] group-hover:text-black transition-colors shrink-0"
+                className="w-4 h-4 text-[#5CFF00] group-hover:text-black transition-colors shrink-0"
               >
                 <rect width="18" height="18" x="3" y="3" rx="5" />
                 <circle cx="12" cy="12" r="4" />

@@ -14,15 +14,15 @@ export const Location: React.FC = () => {
 
   return (
     <section id="localizacao" className="py-16 sm:py-20 lg:py-24 bg-brand-dark/80 border-b border-brand-border/60">
-      <div className="max-w-[1536px] mx-auto px-5 sm:px-8 lg:px-[5%]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left: Address Information - centralizado no mobile */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left: Address Information */}
           <div className="lg:col-span-6 space-y-5 sm:space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
             <span className="text-xs uppercase font-extrabold tracking-widest text-[#65f603] block text-center lg:text-left">
               ONDE ESTAMOS
             </span>
 
-            <h2 className="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight text-center lg:text-left">
+            <h2 className="text-[clamp(1.6rem,4vw,2.5rem)] font-black uppercase text-white tracking-tight text-center lg:text-left text-balance">
               LOCALIZAÇÃO PRIVILEGIADA EM NANUQUE
             </h2>
 
@@ -46,7 +46,7 @@ export const Location: React.FC = () => {
                   </p>
                   <button
                     onClick={handleCopyAddress}
-                    className="mt-2 text-[11px] font-bold text-[#5CFF00] hover:text-[#52e600] inline-flex items-center gap-1 transition cursor-pointer"
+                    className="mt-2 text-xs font-bold text-[#5CFF00] hover:text-[#52e600] inline-flex items-center gap-1.5 transition cursor-pointer min-h-[40px] py-1 px-1.5 rounded-lg hover:bg-white/5"
                   >
                     {copied ? (
                       <>
@@ -115,7 +115,7 @@ export const Location: React.FC = () => {
                     href={GYM_INFO.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#5CFF00] hover:text-black bg-black/70 hover:bg-[#5CFF00] border border-[#5CFF00]/60 px-4 py-2 rounded-full transition-all active:scale-[0.98] group"
+                    className="inline-flex items-center justify-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#5CFF00] hover:text-black bg-black/70 hover:bg-[#5CFF00] border border-[#5CFF00]/60 px-5 py-2.5 min-h-[44px] rounded-full transition-all active:scale-[0.98] group"
                   >
                     <MapPin className="w-3.5 h-3.5 shrink-0" />
                     <span>Como Chegar</span>

@@ -37,6 +37,20 @@ html {
 body {
   overflow-x: hidden;
   font-family: 'Montserrat', 'Poppins', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Acessibilidade: anel de foco nítido e universal para navegação por teclado */
+:focus-visible {
+  outline: 2px solid #5CFF00;
+  outline-offset: 2px;
+}
+
+/* Prevenção de distorção de imagens em qualquer resolução */
+img, svg {
+  max-width: 100%;
 }
 
 /* Estilos para navegadores baseados em WebKit / Chromium (Chrome, Edge, Opera, Safari) */
@@ -93,6 +107,24 @@ body {
 
 .animate-pulse-subtle {
   animation: pulse-subtle 3.2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @layer utilities {

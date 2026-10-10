@@ -24,27 +24,27 @@ export const Differentials: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-24 bg-brand-pitch border-b border-brand-border/60">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
+    <section className="py-16 sm:py-20 lg:py-24 bg-brand-pitch border-b border-brand-border/60">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#65f603]">
             MÉTODO EFRAIM
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight mt-1">
+          <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-black uppercase text-white tracking-tight mt-1 text-balance">
             DIFERENCIAIS PARA O SEU RESULTADO
           </h2>
-          <p className="text-gray-400 text-xs sm:text-sm mt-2">
+          <p className="text-gray-400 text-xs sm:text-sm mt-2 max-w-lg mx-auto">
             Treinar com método científico faz você poupar tempo e evitar lesões.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 items-stretch">
           {differentials.map((item, index) => {
             const Icon = item.icon;
             return (
               <div
                 key={index}
-                className="bg-brand-surface/70 border border-brand-border rounded-2xl p-6 sm:p-7 hover:border-[#65f603]/50 transition duration-300 flex flex-col justify-between group hover:bg-brand-cardHover shadow-sm"
+                className="bg-brand-surface/70 border border-brand-border rounded-2xl p-6 sm:p-7 hover:border-[#65f603]/50 transition duration-300 flex flex-col justify-between h-full group hover:bg-brand-cardHover shadow-sm"
               >
                 <div>
                   <div className="w-11 h-11 rounded-xl bg-[#65f603]/10 border border-[#65f603]/30 flex items-center justify-center text-[#65f603] mb-5 group-hover:scale-105 group-hover:border-[#65f603] transition">

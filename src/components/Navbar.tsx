@@ -89,13 +89,13 @@ export const Navbar: React.FC<NavbarProps> = () => {
             : 'bg-black/90 backdrop-blur-md border-b border-white/5 py-3 sm:py-3.5'
         }`}
       >
-        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 flex items-center justify-between relative">
-          {/* 1. LOGO EFRAIM FITNESS: Alinhado na mesma altura e direção das palavras através de ajuste de posição CSS */}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
+          {/* 1. LOGO EFRAIM FITNESS: Alinhado verticalmente com elegância */}
           <div className="flex items-center shrink-0">
             <a
               href="#inicio"
               onClick={(e) => handleLinkClick(e, '#inicio', 'inicio')}
-              className="inline-flex items-center justify-center group focus:outline-none"
+              className="inline-flex items-center justify-center group focus:outline-none py-1"
             >
               <img
                 src={IMAGES.brandLogo}
@@ -109,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     (e.currentTarget as HTMLImageElement).src = IMAGES.brandLogoPng;
                   }
                 }}
-                className="h-10 sm:h-11 lg:h-12 w-auto object-contain block select-none -translate-y-[20%] transition-transform duration-200 group-hover:scale-105"
+                className="h-9 sm:h-10 lg:h-11 w-auto object-contain block select-none transition-transform duration-200 group-hover:scale-105"
                 style={{
                   filter: 'drop-shadow(0 0 8px rgba(92, 255, 0, 0.45))',
                 }}
@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
           {/* 2. MENU DE NAVEGAÇÃO: Perfeitamente alinhado na mesma altura e centro no Desktop */}
           <nav
-            className="hidden lg:flex items-center gap-7 xl:gap-9 text-[12px] xl:text-[13px] font-bold tracking-wider uppercase lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2"
+            className="hidden lg:flex items-center gap-6 xl:gap-8 text-[12px] xl:text-[13px] font-bold tracking-wider uppercase lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2"
             aria-label="Menu principal"
           >
             {navLinks.map((link) => {
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href, link.id)}
-                  className={`inline-flex items-center transition-colors duration-200 py-1 relative ${
+                  className={`inline-flex items-center transition-colors duration-200 py-1.5 relative whitespace-nowrap ${
                     isActive
                       ? 'text-[#5CFF00] font-black'
                       : 'text-white hover:text-[#5CFF00]'
@@ -137,19 +137,19 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 >
                   <span>{link.label}</span>
                   {isActive && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-[#5CFF00] rounded-full shadow-[0_0_8px_rgba(92,255,0,0.8)]" />
+                    <span className="absolute -bottom-0.5 left-0 right-0 h-[2.5px] bg-[#5CFF00] rounded-full shadow-[0_0_8px_rgba(92,255,0,0.8)]" />
                   )}
                 </a>
               );
             })}
           </nav>
 
-          {/* 3. LADO DIREITO: Atalho de Compartilhar Site no espaço vazio do cabeçalho & Menu Mobile */}
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-            {/* Atalho Compartilhar no Desktop: Localizado no canto superior direito no espaço vazio */}
+          {/* 3. LADO DIREITO: Atalho de Compartilhar Site no espaço do cabeçalho & Menu Mobile */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Atalho Compartilhar no Desktop */}
             <button
               onClick={handleShareClick}
-              className="hidden lg:inline-flex items-center gap-2 px-3.5 py-1.5 xl:px-4 xl:py-2 rounded-full bg-[#121418] hover:bg-[#1a1f26] border border-white/15 hover:border-[#5CFF00] text-gray-200 hover:text-[#5CFF00] text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(92,255,0,0.35)] cursor-pointer group active:scale-95"
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#121418] hover:bg-[#1a1f26] border border-white/15 hover:border-[#5CFF00] text-gray-200 hover:text-[#5CFF00] text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-[0_0_16px_rgba(92,255,0,0.35)] cursor-pointer group active:scale-95 min-h-[38px]"
               title="Compartilhar site"
               aria-label="Compartilhar site"
             >
@@ -157,20 +157,20 @@ export const Navbar: React.FC<NavbarProps> = () => {
               <span>Compartilhar</span>
             </button>
 
-            {/* Atalho Compartilhar no Mobile: Ícone rápido ao lado do menu */}
+            {/* Atalho Compartilhar no Mobile: Área de toque confortável >= 44x44px */}
             <button
               onClick={handleShareClick}
-              className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-[#5CFF00] hover:border-[#5CFF00]/40 transition focus:outline-none"
+              className="lg:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-[#5CFF00] hover:border-[#5CFF00]/40 transition active:scale-95 focus:outline-none"
               title="Compartilhar site"
               aria-label="Compartilhar site"
             >
-              <Share2 className="w-4 h-4 text-[#5CFF00]" />
+              <Share2 className="w-4.5 h-4.5 text-[#5CFF00]" />
             </button>
 
-            {/* Botão de Menu Mobile */}
+            {/* Botão de Menu Mobile: Área de toque confortável >= 44x44px */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:text-[#5CFF00] transition focus:outline-none"
+              className="lg:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-[#5CFF00] transition active:scale-95 focus:outline-none"
               aria-label="Abrir Menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -181,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
         {/* Menu Gaveta Mobile */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-black/98 border-b border-white/10 px-5 py-5 space-y-3 shadow-2xl backdrop-blur-2xl">
+          <div className="lg:hidden bg-black/98 border-b border-white/10 px-4 sm:px-6 py-4 space-y-3 shadow-2xl backdrop-blur-2xl animate-fade-in">
             <nav className="flex flex-col space-y-1">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.id;
@@ -190,7 +190,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     key={link.label}
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href, link.id)}
-                    className={`flex items-center justify-between px-3.5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition ${
+                    className={`flex items-center justify-between px-3.5 py-3 min-h-[44px] rounded-lg text-xs font-bold uppercase tracking-wider transition ${
                       isActive
                         ? 'text-[#5CFF00] bg-white/5 border-l-2 border-[#5CFF00] pl-3.5'
                         : 'text-gray-200 hover:text-white hover:bg-white/5'
@@ -210,7 +210,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   setMobileMenuOpen(false);
                   handleShareClick();
                 }}
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-[#5CFF00]/10 border border-[#5CFF00]/30 text-[#5CFF00] text-xs font-bold uppercase tracking-wider hover:bg-[#5CFF00] hover:text-black transition-colors"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 min-h-[44px] rounded-lg bg-[#5CFF00]/10 border border-[#5CFF00]/30 text-[#5CFF00] text-xs font-bold uppercase tracking-wider hover:bg-[#5CFF00] hover:text-black transition-colors"
               >
                 <Share2 className="w-4 h-4" />
                 <span>Compartilhar Site</span>

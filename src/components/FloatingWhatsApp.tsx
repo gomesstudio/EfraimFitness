@@ -21,7 +21,7 @@ export const FloatingWhatsApp: React.FC = () => {
       {/* Botão Flutuante Discreto, Compacto e Refinado */}
       <a
         aria-label="Fale conosco pelo WhatsApp"
-        className="relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#5CFF00] hover:bg-[#52e600] text-black shadow-lg transition-all duration-200 ease-out hover:scale-105 active:scale-95 focus:outline-none"
+        className="relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#5CFF00] hover:bg-[#52e600] text-black shadow-lg transition-all duration-200 ease-out hover:scale-105 active:scale-95 focus:outline-none"
         style={{
           boxShadow: '0 4px 14px rgba(0, 0, 0, 0.35), 0 0 12px rgba(92, 255, 0, 0.2)',
         }}

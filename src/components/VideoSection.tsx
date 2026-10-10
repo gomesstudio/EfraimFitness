@@ -11,7 +11,7 @@ interface VideoSectionProps {
 }
 
 export const VideoSection: React.FC<VideoSectionProps> = ({
-  videoId = 'FtneDtNmbFU',
+  videoId = 'yNDlCfq3dXY',
   posterSrc = '/video-jocel-cover.webp',
   remotePosterSrc = 'https://www.flexclip.com/xJbGYK9LmIDFbTg55MWOqNVMTZNiAcvs/share-cover.jpg?cc=share',
 }) => {
@@ -39,26 +39,23 @@ export const VideoSection: React.FC<VideoSectionProps> = ({
       {/* ========================================================= */}
       {/* CABEÇALHO INDICATIVO */}
       {/* ========================================================= */}
-      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center mb-8 sm:mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#65f603]/10 border border-[#65f603]/25 mb-4 shadow-[0_0_20px_rgba(101,246,3,0.12)]">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center mb-6 sm:mb-8">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#65f603]/10 border border-[#65f603]/25 mb-3 sm:mb-4 shadow-[0_0_20px_rgba(101,246,3,0.12)]">
           <Sparkles className="w-3.5 h-3.5 text-[#65f603]" />
           <span className="text-[11px] sm:text-xs font-black uppercase tracking-widest text-[#65f603]">
             UMA MENSAGEM ESPECIAL
           </span>
         </div>
 
-        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black uppercase tracking-tight text-white leading-tight">
-          Um recado do <span className="text-[#65f603]">Jocel</span> para você.
+        <h3 className="text-[clamp(1.35rem,4vw,2.25rem)] font-black uppercase tracking-tight text-white leading-tight max-w-2xl mx-auto mb-2 text-center text-balance">
+          Dê o play e conheça um pouco mais sobre a{' '}
+          <span className="text-[#65f603]">Efraim Fitness</span>.
         </h3>
-
-        <p className="mt-3 text-sm sm:text-base md:text-lg text-gray-300 font-normal leading-relaxed max-w-xl mx-auto">
-          Dê o play e conheça um pouco mais sobre a Efraim Fitness.
-        </p>
 
         <button
           type="button"
           onClick={scrollToVideo}
-          className="group inline-flex flex-col items-center gap-1.5 mt-5 text-gray-400 hover:text-[#65f603] transition-colors duration-200 cursor-pointer focus:outline-none"
+          className="group inline-flex flex-col items-center justify-center gap-1.5 mt-2 sm:mt-3 text-gray-400 hover:text-[#65f603] transition-colors duration-200 cursor-pointer focus:outline-none min-h-[44px] py-1 px-3"
           aria-label="Rolar e apontar para o vídeo"
         >
           <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors">
@@ -76,7 +73,7 @@ export const VideoSection: React.FC<VideoSectionProps> = ({
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 flex justify-center">
         <div
           ref={containerRef}
-          className="relative w-full max-w-[340px] sm:max-w-[380px] md:max-w-[400px] group"
+          className="relative w-full max-w-[280px] min-[360px]:max-w-[320px] sm:max-w-[360px] md:max-w-[390px] group"
         >
           {/* Halo sutil flutuante dark */}
           <div

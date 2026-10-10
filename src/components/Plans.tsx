@@ -8,20 +8,20 @@ interface PlansProps {}
 export const Plans: React.FC<PlansProps> = () => {
   return (
     <section id="planos" className="py-16 sm:py-20 lg:py-24 bg-brand-dark/70 border-b border-brand-border/60">
-      <div className="max-w-[1536px] mx-auto px-5 sm:px-8 lg:px-[5%]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#65f603] block">
             INVESTIMENTO NO SEU CORPO
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight mt-1">
+          <h2 className="text-[clamp(1.6rem,4vw,2.5rem)] font-black uppercase text-white tracking-tight mt-1 text-balance">
             PLANOS QUE CABEM NO SEU BOLSO
           </h2>
-          <p className="text-gray-400 text-xs sm:text-sm mt-2">
+          <p className="text-gray-400 text-xs sm:text-sm mt-2 max-w-lg mx-auto">
             Transparência total e planos acessíveis para você manter a constância.
           </p>
 
           {/* Destaque principal solicitado: Todos os planos contam com musculação */}
-          <div className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#65f603]/10 border border-[#65f603]/40 text-[#65f603] text-xs sm:text-sm font-bold shadow-sm">
+          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#65f603]/10 border border-[#65f603]/40 text-[#65f603] text-xs sm:text-sm font-bold shadow-sm">
             <Dumbbell className="w-4 h-4 text-[#65f603] shrink-0" />
             <span>Todos os planos contam com musculação</span>
           </div>
@@ -32,7 +32,7 @@ export const Plans: React.FC<PlansProps> = () => {
           {GYM_PLANS.map((plan) => (
             <div
               key={plan.id}
-              className="bg-brand-surface rounded-2xl border border-brand-border p-5 sm:p-6 flex flex-col justify-between hover:border-[#65f603]/50 transition duration-300 hover:shadow-lg"
+              className="bg-brand-surface rounded-2xl border border-brand-border p-5 sm:p-6 flex flex-col justify-between hover:border-[#65f603]/50 transition duration-300 hover:shadow-lg h-full"
             >
               <div>
                 <div className="flex justify-between items-center gap-2">
@@ -63,12 +63,12 @@ export const Plans: React.FC<PlansProps> = () => {
 
               <div className="mt-6 pt-3 text-center">
                 <a
-                  className="w-full inline-flex items-center justify-center gap-1.5 border border-[#65f603]/80 hover:border-[#65f603] hover:bg-[#65f603] text-[#65f603] hover:text-black font-extrabold py-2 sm:py-2.5 px-3 sm:px-4 rounded-full transition-all duration-200 text-[10px] sm:text-xs uppercase tracking-wider bg-black/40 backdrop-blur-sm active:scale-[0.98]"
+                  className="w-full inline-flex items-center justify-center gap-2 border border-[#65f603]/80 hover:border-[#65f603] hover:bg-[#65f603] text-[#65f603] hover:text-black font-extrabold py-3 px-4 min-h-[44px] rounded-full transition-all duration-200 text-xs uppercase tracking-wider bg-black/40 backdrop-blur-sm active:scale-[0.98] text-center"
                   href={createWhatsAppLink(plan.whatsappMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ExclusiveWhatsAppIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current" />
+                  <ExclusiveWhatsAppIcon className="w-3.5 h-3.5 fill-current shrink-0" />
                   <span>Matricular via WhatsApp</span>
                 </a>
               </div>
@@ -91,18 +91,18 @@ export const Plans: React.FC<PlansProps> = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 shrink-0">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 shrink-0 w-full sm:w-auto">
               <div className="text-center sm:text-right">
                 <span className="text-2xl sm:text-3xl font-black text-white">{SATURDAY_PLAN.price}</span>
                 <span className="text-xs text-gray-400 ml-1 font-semibold">{SATURDAY_PLAN.period}</span>
               </div>
               <a
-                className="inline-flex items-center justify-center gap-1.5 border border-[#65f603]/80 hover:border-[#65f603] hover:bg-[#65f603] text-[#65f603] hover:text-black font-extrabold py-2 sm:py-2.5 px-4 rounded-full transition-all duration-200 text-[10px] sm:text-xs uppercase tracking-wider bg-black/40 backdrop-blur-sm active:scale-[0.98]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#65f603]/80 hover:border-[#65f603] hover:bg-[#65f603] text-[#65f603] hover:text-black font-extrabold py-3 px-6 min-h-[44px] rounded-full transition-all duration-200 text-xs uppercase tracking-wider bg-black/40 backdrop-blur-sm active:scale-[0.98] text-center"
                 href={createWhatsAppLink(SATURDAY_PLAN.whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <ExclusiveWhatsAppIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current" />
+                <ExclusiveWhatsAppIcon className="w-3.5 h-3.5 fill-current shrink-0" />
                 <span>Treinar no Sábado</span>
               </a>
             </div>
