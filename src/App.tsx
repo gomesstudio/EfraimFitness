@@ -27,7 +27,7 @@ export default function App() {
 
       const canonicalUrl = isCustomDomain
         ? `${origin}${window.location.pathname.replace(/\/+$/, '') || '/'}`
-        : 'https://efraimfitness.com.br/';
+        : 'https://efraimfitness.gomes-studio.workers.dev/';
 
       // 1. Sincroniza canonical absoluto
       let canonicalLink = document.querySelector('link[rel="canonical"]');

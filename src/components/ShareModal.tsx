@@ -33,7 +33,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const currentUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://efraimfitness.com.br');
+  const currentUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://efraimfitness.gomes-studio.workers.dev');
 
   const shareTitle = 'Efraim Fitness | Academia em Nanuque - MG';
   const shareText = `Conheça a Academia Efraim Fitness em Nanuque - MG! Saúde, treinamento funcional e musculação completa: ${currentUrl}`;

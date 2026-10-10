@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://efraimfitness.com.br/</loc>
+    <loc>https://efraimfitness.gomes-studio.workers.dev/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://efraimfitness.com.br/og-image.jpg</image:loc>
+      <image:loc>https://efraimfitness.gomes-studio.workers.dev/og-image.jpg</image:loc>
       <image:title>Academia Efraim Fitness em Nanuque - MG</image:title>
       <image:caption>Musculação, treinamento funcional, avaliação física com bioimpedância e acompanhamento exclusivo no Bairro Israel Pinheiro.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://efraimfitness.com.br/hero-bg-new.webp</image:loc>
+      <image:loc>https://efraimfitness.gomes-studio.workers.dev/hero-bg-new.webp</image:loc>
       <image:title>Estrutura e Equipamentos Efraim Fitness</image:title>
       <image:caption>Espaço completo de musculação e treinamento físico próximo à Lagoa dos Namorados.</image:caption>
     </image:image>
