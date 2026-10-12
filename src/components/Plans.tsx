@@ -1,21 +1,25 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { Dumbbell, ShieldCheck } from 'lucide-react';
+import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
 import { GYM_PLANS, SATURDAY_PLAN, createWhatsAppLink } from '../data/gymData';
 import { ExclusiveWhatsAppIcon } from './ExclusiveIcons';
 
 interface PlansProps {}
 
 export const Plans: React.FC<PlansProps> = () => {
+  const headerFade = useScrollFadeIn<HTMLDivElement>();
+  const cardsFade = useScrollFadeIn<HTMLDivElement>();
+  const saturdayFade = useScrollFadeIn<HTMLDivElement>();
+  const guaranteeFade = useScrollFadeIn<HTMLDivElement>();
+
   return (
     <section id="planos" className="py-16 sm:py-20 lg:py-24 bg-brand-dark/70 border-b border-brand-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center max-w-2xl mx-auto mb-10 sm:mb-14"
+        <div
+          ref={headerFade.ref}
+          className={`text-center max-w-2xl mx-auto mb-10 sm:mb-14 transition-all duration-700 ease-out transform ${
+            headerFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
         >
           <span className="text-xs uppercase font-extrabold tracking-widest text-[#65f603] block">
             INVESTIMENTO NO SEU CORPO
@@ -32,18 +36,19 @@ export const Plans: React.FC<PlansProps> = () => {
             <Dumbbell className="w-4 h-4 text-[#65f603] shrink-0" />
             <span>Todos os planos contam com musculação</span>
           </div>
-        </motion.div>
+        </div>
 
         {/* 4 Periodic Plans Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 items-stretch max-w-7xl mx-auto">
+        <div ref={cardsFade.ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 items-stretch max-w-7xl mx-auto">
           {GYM_PLANS.map((plan, index) => (
-            <motion.div
+            <div
               key={plan.id}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-brand-surface rounded-2xl border border-brand-border p-5 sm:p-6 flex flex-col justify-between hover:border-[#65f603]/50 transition duration-300 hover:shadow-lg h-full"
+              style={{
+                transitionDelay: cardsFade.isVisible ? `${index * 100}ms` : '0ms',
+              }}
+              className={`bg-brand-surface rounded-2xl border border-brand-border p-5 sm:p-6 flex flex-col justify-between hover:border-[#65f603]/50 transition-all duration-500 ease-out hover:shadow-lg h-full transform ${
+                cardsFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-7'
+              }`}
             >
               <div>
                 <div className="flex justify-between items-center gap-2">
@@ -83,17 +88,16 @@ export const Plans: React.FC<PlansProps> = () => {
                   <span>Matricular via WhatsApp</span>
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Sábado Avulso Highlight Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-4xl mx-auto mt-6 sm:mt-8"
+        <div
+          ref={saturdayFade.ref}
+          className={`max-w-4xl mx-auto mt-6 sm:mt-8 transition-all duration-700 ease-out transform ${
+            saturdayFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
         >
           <div className="bg-brand-surface/90 rounded-2xl border border-brand-border p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-5 hover:border-[#65f603]/40 transition duration-300">
             <div className="flex-1 text-center sm:text-left">
@@ -124,19 +128,18 @@ export const Plans: React.FC<PlansProps> = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Security / Quality guarantee note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-8 sm:mt-10 text-center text-xs text-gray-400 flex items-center justify-center gap-2"
+        <div
+          ref={guaranteeFade.ref}
+          className={`mt-8 sm:mt-10 text-center text-xs text-gray-400 flex items-center justify-center gap-2 transition-all duration-700 ease-out transform ${
+            guaranteeFade.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
         >
           <ShieldCheck className="w-4 h-4 text-[#65f603]" />
           <span>Matrícula rápida, sem burocracia e com orientação presencial no primeiro dia de treino.</span>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

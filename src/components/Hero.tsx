@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center lg:items-start pt-6 pb-16 sm:py-12 lg:py-0">
         
         {/* Bloco de Conteúdo: posicionado com centralização natural e harmônica */}
-        <div className="hero-content w-full lg:max-w-[660px] xl:max-w-[720px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-4 sm:space-y-5 lg:space-y-6 my-auto mx-auto lg:mx-0">
+        <div className="hero-content w-full lg:max-w-[780px] xl:max-w-[860px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-4 sm:space-y-5 lg:space-y-6 my-auto mx-auto lg:mx-0">
           
           {/* 1. LOGO EFRAIM FITNESS: Presença limpa e elegante */}
           <div className="w-full flex items-center justify-center lg:justify-start">
@@ -57,15 +57,15 @@ export const Hero: React.FC<HeroProps> = () => {
             />
           </div>
 
-          {/* 2. TÍTULO PRINCIPAL: 2 Linhas com tipografia clamp harmônica para qualquer tela */}
-          <h1 className="w-full uppercase tracking-tight leading-[1.05] sm:leading-[0.98] text-center lg:text-left flex flex-col items-center lg:items-start">
-            {/* Linha 1: 'SEU OBJETIVO.' (BRANCO) */}
-            <span className="block font-black text-white text-[clamp(1.65rem,6.5vw,3.75rem)] tracking-tight text-center lg:text-left mx-auto lg:mx-0 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
-              SEU OBJETIVO.
+          {/* 2. TÍTULO PRINCIPAL: Slogan oficial com 2 frases corridas ocupando exatamente duas linhas */}
+          <h1 className="w-full uppercase tracking-tight leading-[1.1] sm:leading-[1.02] text-center lg:text-left flex flex-col items-center lg:items-start">
+            {/* Linha 1: 'Fé e força para vencer.' (BRANCO, CORRIDA) */}
+            <span className="block font-black text-white text-[clamp(1rem,4.4vw,2.85rem)] tracking-tight text-center lg:text-left mx-auto lg:mx-0 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] whitespace-nowrap">
+              Fé e força para vencer.
             </span>
-            {/* Linha 2: 'NOSSA MISSÃO.' (VERDE NEON/LIMA #5CFF00) */}
-            <span className="block font-black text-[#5CFF00] text-[clamp(1.65rem,6.5vw,3.75rem)] tracking-tight mt-1 text-center lg:text-left mx-auto lg:mx-0 drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
-              NOSSA MISSÃO.
+            {/* Linha 2: 'Disciplina para transformar.' (DESTAQUE VERDE NEON/LIMA #5CFF00, CORRIDA) */}
+            <span className="block font-black text-[#5CFF00] text-[clamp(1rem,4.4vw,2.85rem)] tracking-tight mt-1 sm:mt-1.5 text-center lg:text-left mx-auto lg:mx-0 drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] whitespace-nowrap">
+              Disciplina para transformar.
             </span>
           </h1>
 

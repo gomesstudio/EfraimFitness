@@ -194,11 +194,11 @@ export const About: React.FC = () => {
               </span>
             </div>
 
-            {/* Headline Principal: MAIS QUE UMA ACADEMIA */}
+            {/* Headline Principal: SEU OBJETIVO. NOSSA MISSÃO. */}
             <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-black uppercase tracking-tight text-white leading-[1.08] text-center lg:text-left">
-              MAIS QUE UMA
+              SEU OBJETIVO.
               <br />
-              <span className="text-[#65f603]">ACADEMIA.</span>
+              <span className="text-[#65f603]">NOSSA MISSÃO.</span>
             </h2>
 
             {/* Textos explicativos institucionais */}
